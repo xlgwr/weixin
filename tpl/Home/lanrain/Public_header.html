@@ -1,0 +1,155 @@
+<link rel="stylesheet" type="text/css" href="{lanrain::RES}/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="{lanrain::RES}/css/index.css"/>
+<!-- add new html css -->
+<link rel="stylesheet" type="text/css" href="{lanrain::RES}/css/indexhome.css"/>
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="{lanrain::RES}/css/ie6.css"/>
+<![endif]-->
+<!-- old html mode -->
+<script type="text/javascript">window.onerror=function(){return true;}</script>
+<script type="text/javascript" src="{lanrain::RES}/js/lang.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/config.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/jquery183.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/common.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/page.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/jquery.lazyload.js"></script>
+<!-- add new html mode -->
+<script type="text/javascript" src="{lanrain::RES}/js/html5.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/project.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/carouFredSel.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/wei-index.js"></script>
+
+<script type="text/javascript" src="{lanrain::RES}/js/inpage_linkid.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/analytics.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/ga.js"></script>
+<script type="text/javascript" src="{lanrain::RES}/js/analytics.js"></script>
+
+<script type="text/javascript">
+GoMobile('');
+var searchid = 5;
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+</head>
+<body>
+	 <!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='#'">创想·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>微信营销，如此简单！</h2>
+				
+		</div>
+		<div class="right line-li">
+			<ul>
+				<li>
+					<a href="/" class="hover">首页</a>
+				</li>
+				<li>
+					<a href="{lanrain::U('Home/Index/fc')}" >功能介绍</a>
+				</li>
+				
+				<li>
+					<a href="{lanrain::U('Home/Index/price')}">资费说明</a>
+				</li>
+				
+				<li>
+					<a href="{lanrain::U('Home/Index/about')}">关于我们</a>
+				</li>
+				
+					<if condition="$_SESSION[uid]==false">
+					<li><a href="{lanrain::U('Index/login')}" class='hover'>登录</a></li>
+					<li><a href="{lanrain::U('Index/login')}">注册</a></li>
+					<else/>
+					<li><a href="{lanrain::U('User/Index/index')}" ><span style="color:red">{lanrain:$Think.session.uname}</span></a></li>
+					<li><a href="{lanrain::U('User/Index/index')}" hidefocus="true"  ><span style="color:red">管理中心</span></a></li>
+					<li><a href="/#" onClick="Javascript:window.open('{lanrain::U('System/Admin/logout')}','_blank')" >退出</a></li>
+					</if>	
+				
+                <li>
+					<a href="{lanrain::U('Home/Index/help')}"  class="navtwo"  target="_black">帮助</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a href="http://www.firefox.com.cn/download/" target="_blank">Firefox</a>或<a href="http://www.google.cn/intl/zh-CN/chrome/browser/index.html" target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+var $do_submit = false;
+
+// 绑定回车键
+$('#loginBox').keydown(function(e){
+	if(13 == event.keyCode){
+		login();
+	}
+});
+
+	function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $done_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($done_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的未来购号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+</script><!-- banner -->
