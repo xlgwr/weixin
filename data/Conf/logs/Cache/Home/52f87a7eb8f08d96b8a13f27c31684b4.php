@@ -26,12 +26,38 @@
 <script type="text/javascript" src="<?php echo RES;?>/js/carouFredSel.js"></script>
 <script type="text/javascript" src="<?php echo RES;?>/js/wei-index.js"></script>
 
+<script type="text/javascript" src="<?php echo RES;?>/js/inpage_linkid.js"></script>
+<script type="text/javascript" src="<?php echo RES;?>/js/analytics.js"></script>
+<script type="text/javascript" src="<?php echo RES;?>/js/ga.js"></script>
+<script type="text/javascript" src="<?php echo RES;?>/js/analytics.js"></script>
+
 <script type="text/javascript">
 GoMobile('');
 var searchid = 5;
 </script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
 </head>
-<body oncontextmenu="return false" onselectstart ="return false">
+<body>
 	 <!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
 <div class="nav clearfix">
 	<div class="nav-content">
@@ -56,52 +82,23 @@ var searchid = 5;
 				<li>
 					<a href="<?php echo U('Home/Index/about');?>">关于我们</a>
 				</li>
-				<li>
-					<?php if($_SESSION[uid]==false): ?><a href="<?php echo U('Index/login');?>" class='hover'>登录</a>
-					<a href="<?php echo U('Index/login');?>">注册</a>
+				
+					<?php if($_SESSION[uid]==false): ?><li><a href="<?php echo U('Index/login');?>" class='hover'>登录</a></li>
+					<li><a href="<?php echo U('Index/login');?>">注册</a></li>
 					<?php else: ?>
-					您好,<a href="<?php echo U('User/Index/index');?>" hidefocus="true"  ><span style="color:red"><?php echo (session('uname')); ?></span></a>
-					<a href="/#" onClick="Javascript:window.open('<?php echo U('System/Admin/logout');?>','_blank')" >退出</a><?php endif; ?>	
-				</li>
+					<li><a href="<?php echo U('User/Index/index');?>" ><span style="color:red"><?php echo (session('uname')); ?></span></a></li>
+					<li><a href="<?php echo U('User/Index/index');?>" hidefocus="true"  ><span style="color:red">管理中心</span></a></li>
+					<li><a href="/#" onClick="Javascript:window.open('<?php echo U('System/Admin/logout');?>','_blank')" >退出</a></li><?php endif; ?>	
+				
                 <li>
-					<a href="<?php echo U('Home/Index/help');?>"  class="navtwo" target="_black">帮助</a>
+					<a href="<?php echo U('Home/Index/help');?>"  class="navtwo"  target="_black">帮助</a>
 				</li>
 			</ul>
 		</div>
 	</div>
 </div>
 
-	<div id="loginBox">
-		<div class="login-panel">
-			<h3>登录</h3>
-			<div class="login-mod">
-				<div class="login-err-panel dn" id="err_area">
-					<span class="icon-wrapper"><i class="icon24-login err" style="margin-top:-.2em;*margin-top:0;"></i></span>
-					<span id="err_tips"></span>
-				</div>
-				<form class="login-form" id="login-form">
-					<div class="login-un">
-						<span class="icon-wrapper"><i class="icon24-login un"></i></span>
-						<input type="text" id="username" placeholder="未来购号">
-					</div>
-					<div class="login-pwd">
-						<span class="icon-wrapper"><i class="icon24-login pwd"></i></span>
-						<input type="password" id="password" placeholder="密码">
-					</div>
-				</form>
-				<div class="login-help-panel">
-					<a id="rememberPwd" class="login-remember-pwd" href="javascript:;">
-						<input type="checkbox" id="rememberPwdIcon">记住帐号
-					</a>
-					<a class="login-forget-pwd" href="<?php echo U('Index/reg');?>">我是新用户!<strong>申请入驻</strong></a>
-				</div>
-				<div class="login-btn-panel">
-					<a class="login-btn" title="点击登录" href="javascript:;" id="login_button" onclick="login();">登录</a>
-				</div>
-			</div>
-		</div>
-		<div class="login-cover" onclick="loginBox.toggle(this, event);"></div>
-	</div>
+
 <div id="ie9-tips" class="clearfix">
 	<div id="tipsPanel">
 		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a href="http://www.firefox.com.cn/download/" target="_blank">Firefox</a>或<a href="http://www.google.cn/intl/zh-CN/chrome/browser/index.html" target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
@@ -309,81 +306,51 @@ a:hover{ text-decoration: underline; }
 </div>
     </div>
 <script type="text/javascript">try{Dd('webpage_6').className='left_menu_on';}catch(e){}</script>
-<div class="footer">
+<style type="text/css">
+<!--
+.STYLE1 {color: #484848}
+.STYLE2 {font-size: larger}
+-->
+</style>
+<div class="footer STYLE1">
 	<div class="footer-content clearfix">
 		
 		<div class="copyright">
-			Copyright © 2011-2013 www.weilgo.com. All Rights Reserved 创想公司版权所有 
+			<p align="center" class="STYLE2">地址：海宁市西山路612号龙翔商务楼1506 </p>
+			<p align="center" class="STYLE2">联系方式：0573-87231707 13586378851 18868718085 QQ：1771472817 </p>
+			<p align="center" class="STYLE2"> Copyright © 2011-2013 www.weilgo.com. All Rights Reserved   海宁创想科技有限公司——海宁极限贸易有限公司 版权所有    —</p>
+			<p align="center" class="STYLE2">——浙ICP备12038865号-1——</p>
 		</div>
 	</div>
 </div>
-<script>
-	function feedbackSubmit(){
-		var $data = {
-			feedback: $('#feedback-text').val(),
-			email: $('#feedback-input').val(),
-			url: self.location.href
-		};
-		$.post('/site/feedback', $data, function(rs){
-			alert(rs.error);
-			if (200 == rs.code)
-			{
-				$('#feedback, #feedback_cover').toggleClass('on');
-			}
-		}, 'json');
-	}
-</script>
 <!--公告信息-->
 	<div id="notice_mask"></div>
 	<div id="notice_message" style="position: absolute; left: 373.5px; top: 20%;">
 		<div class="title">公 告<a onclick="javascript:jQuery('#notice_mask').hide(),jQuery('#notice_message').hide();">×</a></div>
 		<div class="content">
-			<pre style="white-space:pre-wrap;"><p style="text-align:center;">
-	创想官网模板管理改版啦！
-</p>
-<p>
-	随着您们对于模板需求的增加，微官网模板也越来越多，为了以后创想能够有越来越多的漂亮模板，创想团队对模板进行的详细划分，以便您们能更加便捷的选择所需模板。
-</p>
-<p>
-	<span style="line-height:1.5;">亮点一：系统通过对创想7万多用户使用模板的数据统计，筛选出前10名的热门模板推荐给大家，让您能够一键就能找到最钟爱的模板，便捷又高效。</span>
-</p>
-<p>
-	<span style="line-height:1.5;">亮点二：模板进行了详细的划分，分别有经典大方、简约时尚、五彩斑斓、个性定制、VIP尊享，风格各异，根据您们官网模板的需求赶紧来体验吧！</span>
-</p>
-<p>
-	VIP尊享仅支持增强版、至尊版及行业版商户，如果您没有权限，并且已经使用此类模板，请谨慎替换，一旦替换则不能再次使用，给您带来的不便尽请谅解。
-</p>
-<p style="text-align:right;">
-	创想
+		  <pre style="white-space:pre-wrap;"><p style="text-align:center;">创想微信联盟————VIP微信公众号展示!</p>                              海宁微信第一公众号[海宁未来购生活]
+
+海宁未来购生活官方号--代言人模特--蒋峰--打造海宁最大的娱乐休闲生活全媒体平台（吃货，购物，团购，优惠券，同城活动，便民服务等功能）本地生活尽在这里！
+</pre>
+<a href="javascript:void(0);"></a>
+<pre style="white-space:pre-wrap;"> 
+<p><img src="<?php echo RES;?>/images/shouye1.JPG" width="600px"></p>
+  <div class="pic"><p style="text-align:right;">
+	创想微信营销
 </p>
 <p style="text-align:right;">
 	2013-12-08
-</p></pre>
+</p>
+			</div>
+			</pre>
 		</div>
 	</div>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#notice_mask').click(function(){
-			$('#notice_mask').hide();
-			$('#notice_qrcode').hide();
-			$('#notice_message').hide();
-		});
-
-		$(window).resize(function(){
-			$('#notice_qrcode').css({
-				position:'absolute',
-				left: ($(window).width() - $('#notice_qrcode').outerWidth())/2,
-				top: ($(window).height() - $('#notice_qrcode').outerHeight())/2
-			});
-
-			$('#notice_message').css({
-				position:'absolute',
-				left: ($(window).width() - $('#notice_message').outerWidth())/2,
-				top: ($(window).height() - $('#notice_message').outerHeight())/2
-			});
-		});
-	});
-</script>
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+  <div class="erwei_big" style="display:none;">
+	  <p>扫一扫，关注创想官方微信，体验创想智能</p>
+  </div>
+[海宁微生活]</div>
 </body>
 </html>

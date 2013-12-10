@@ -159,15 +159,22 @@ $('#loginBox').keydown(function(e){
 	}
 </script><!-- banner -->
 
-   <div class="header clearfix">
+   <style type="text/css">
+<!--
+.STYLE1 {font-size: larger}
+.STYLE4 {
+	color: #0066FF;
+	font-weight: bold;
+}
+-->
+   </style>
+<div class="header clearfix">
 	<div class="hd-c">
 		<div class="banner">
 			<ul>
 									<li class="pic-intro" >
 						<div class="text">
-							<h4>
-								已有<font>88,138</font>入驻创想，微信营销 如此简单
-							</h4>
+							<h4>已有<font>嘉善-德清-海宁-嘉兴-平湖-湖州-德清-余杭-绍兴等30多个地区3000多个人及企业</font>入驻创想，微信营销 如此简单</h4>
 							<a id="start_btn" class="start" href="<?php echo U('Index/reg');?>" title="入驻创想"></a>
 						</div>
 						<div class="pic">
@@ -177,7 +184,7 @@ $('#loginBox').keydown(function(e){
 									<li class="pic-intro" style="display: none;">
 						<div class="text">
 							<h4>
-								已有<font>88,138</font>入驻创想，微信营销 如此简单
+								已有<font>嘉善-德清-海宁-嘉兴-平湖-湖州-德清-余杭-绍兴等30多个地区3000多个人及企业</font>入驻创想，微信营销 如此简单
 							</h4>
 							<a id="start_btn" class="start" href="<?php echo U('Index/reg');?>" title="入驻创想"></a>
 						</div>
@@ -188,7 +195,7 @@ $('#loginBox').keydown(function(e){
 									<li class="pic-intro" style="display: none;">
 						<div class="text">
 							<h4>
-								已有<font>88,138</font>入驻创想，微信营销 如此简单
+								已有<font>嘉善-德清-海宁-嘉兴-平湖-湖州-德清-余杭-绍兴等30多个地区3000多个人及企业</font>入驻创想，微信营销 如此简单
 							</h4>
 							<a id="start_btn" class="start" href="<?php echo U('Index/reg');?>" title="入驻创想"></a>
 						</div>
@@ -199,7 +206,7 @@ $('#loginBox').keydown(function(e){
 									<li class="pic-intro" style="display: none;">
 						<div class="text">
 							<h4>
-								已有<font>88,138</font>入驻创想，微信营销 如此简单
+								已有<font>嘉善-德清-海宁-嘉兴-平湖-湖州-德清-余杭-绍兴等30多个地区3000多个人及企业</font>入驻创想，微信营销 如此简单
 							</h4>
 							<a id="start_btn" class="start" href="<?php echo U('Index/reg');?>" title="入驻创想"></a>
 						</div>
@@ -210,7 +217,7 @@ $('#loginBox').keydown(function(e){
 									<li class="pic-intro" style="display: none;">
 						<div class="text">
 							<h4>
-								已有<font>88,138</font>入驻创想，微信营销 如此简单
+								已有<font>嘉善-德清-海宁-嘉兴-平湖-湖州-德清-余杭-绍兴等30多个地区3000多个人及企业</font>入驻创想，微信营销 如此简单
 							</h4>
 							<a id="start_btn" class="start" href="<?php echo U('Index/reg');?>" title="入驻创想"></a>
 						</div>
@@ -221,7 +228,7 @@ $('#loginBox').keydown(function(e){
 									<li class="pic-intro" style="display: none;">
 						<div class="text">
 							<h4>
-								已有<font>88,138</font>入驻创想，微信营销 如此简单
+								已有<font>嘉善-德清-海宁-嘉兴-平湖-湖州-德清-余杭-绍兴等30多个地区3000多个人及企业</font>入驻创想，微信营销 如此简单
 							</h4>
 							<a id="start_btn" class="start" href="<?php echo U('Index/login');?>" title="入驻创想"></a>
 						</div>
@@ -248,13 +255,13 @@ $('#loginBox').keydown(function(e){
 <div class="content clearfix">
 			<div id="notice-panel">
 			<div style="width:600px; margin:0 auto; position:relative;">
-				<h1><div class="notice_icon"></div>公告：</h1>
-				<div class="notice">
+				<h1><div class="notice_icon"></div>公众号：</h1>
+			  <div class="notice">
 					<label>
-						<a href="javascript:;" onclick="javascript:$('#notice_mask').show(), $('#notice_message').show();" title="">创想官网模板管理改版啦！</a>
-						<span class="date">2013-12-08</span>
+						<a href="javascript:;" onclick="javascript:$('#notice_mask').show(), $('#notice_message').show();" title="">创想微信联盟————VIP微信公众号展示！！</a>
+						<span class="date">2013-12-09</span>
 					</label>
-				</div>
+			  </div>
 			</div>
 		</div>
 		<div class="feature-content">
@@ -274,37 +281,42 @@ $('#loginBox').keydown(function(e){
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#site">
 					<div class="fimg icon mstate"></div>
-					<h3>微官网</h3>
+					<h3>微信官网</h3>
 				</a>
-				<p>5分钟轻松建站<br>打造酷炫微官网</p>
+			  <p>快速轻松建立一个微网站<br>
+打造自己独一无二的企业形象</p>
 			</dd>
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#member">
 					<div class="fimg icon member"></div>
-					<h3>微会员</h3>
+					<h3>微信会员卡</h3>
 				</a>
-				<p>方便携带&nbsp;永不挂失<br>消费积分&nbsp;一卡配备</p>
+				<p>帮助企业建立品牌推广，会员管理，营销一体的微会员管理平台</p>
 			</dd>
-			<dd class="vborder">
-				<a href="<?php echo U('Home/Index/fc');?>#activities">
-					<div class="fimg icon activities"></div>
-					<h3>微活动</h3>
-				</a>
-				<p>吸引用户参与<br>增强用户沉淀</p>
-			</dd>
+		  <dt>&nbsp;</dt>
+		  <dd class="vborder">
+			  <a href="<?php echo U('Home/Index/fc');?>#activities">
+				  <div class="fimg icon activities"></div>
+				  <h3>微信活动</h3>
+			  </a>
+			  <p>商家发起营销活动吸引用户参与增强用户沉淀</p>
+		  </dd>
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#push">
 					<div class="fimg icon Push"></div>
-					<h3>微推送</h3>
+					<h3>微信订单</h3>
 				</a>
-				<p>无线周边推广<br>提高品牌知名度</p>
+				<p>无线下单，及时通知<br>
+				  商场订单，酒店，餐饮订单，方便快捷
+			  </p>
 			</dd>
 			<dd>
 				<a href="<?php echo U('Home/Index/fc');?>#services">
 					<div class="fimg icon service"></div>
-					<h3>微服务</h3>
+					<h3>便民微服务</h3>
 				</a>
-				<p>提供生活服务<br>增加用户粘性</p>
+				<p>提供生活服务，快递，天气，公交，翻译<br>
+				  增加用户粘性，增强微信功能，方便与众</p>
 			</dd>
 		</dl>
 		<div class="line"></div>
@@ -312,23 +324,24 @@ $('#loginBox').keydown(function(e){
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#message">
 					<div class="fimg icon message"></div>
-					<h3>微留言</h3>
+					<h3>微留言，招聘，二手</h3>
 				</a>
-				<p>意见？需求？疑问？<br>一键留言&nbsp;&nbsp;一键回复</p>
+				<p>留言，互动，招聘，二手，交友，私信<br>
+			  一键留言&nbsp;&nbsp;一键回复，一见私信</p>
 			</dd>
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#photo">
 					<div class="fimg icon albums"></div>
 					<h3>微相册</h3>
 				</a>
-				<p>各行各业<br>照片展现轻松搞定</p>
+				<p>提供精美相册系统，完美展示图片效果</p>
 			</dd>
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#menu">
 					<div class="fimg icon menu"></div>
 					<h3>自定义菜单</h3>
 				</a>
-				<p>无需定制 完全自定义<br>无需触发 完全可视化</p>
+			  <p>服务号无需定制，完全自定义。用户无需输入关键词触发回复，直接点击</p>
 			</dd>
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#research">
@@ -342,7 +355,7 @@ $('#loginBox').keydown(function(e){
 					<div class="fimg icon mtatistics"></div>
 					<h3>微统计</h3>
 				</a>
-				<p>折线图清晰查询数据<br>助力企业营销</p>
+				<p>创想后台可以实时统计微信粉丝关注情况，清晰查询数据助力企业营销</p>
 			</dd>
 		</dl>
 		<div class="line"></div>
@@ -352,14 +365,14 @@ $('#loginBox').keydown(function(e){
 					<div class="fimg icon mstate"></div>
 					<h3>微房产</h3>
 				</a>
-				<p>房产行业有力的解决方案<br>360度看房更给力</p>
+				<p>即将开放</p>
 			</dd>
 			<dd  class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#car">
 					<div class="fimg icon car"></div>
 					<h3>微汽车</h3>
 				</a>
-				<p>预约试驾或保养 车主关怀<br>360度看车应有尽有</p>
+				<p>即将开放</p>
 			</dd>
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#wedd">
@@ -392,20 +405,23 @@ $('#loginBox').keydown(function(e){
 					<h3>微预约</h3>
 				</a>
 				<p>各种预约 一键即可<br>短信邮件会立即通知商户</p>
-			</dd>
+		  </dd>
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#vshop">
 					<div class="fimg icon vshop"></div>
 					<h3>微商城</h3>
 				</a>
-				<p>小微信也有大商城<br>电商轻松就能走入微信</p>
+				<p>微信也有大商城，分享，下单，一键合成<br>
+				  电商轻松让你走入微信时代</p>
 			</dd>
 			<dd  class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#cate">
 					<div class="fimg icon cate"></div>
-					<h3>微餐饮</h3>
+					<h3>微餐饮无线gprs下单</h3>
 				</a>
-				<p>扫一扫<br>微信也能够实时点餐</p>
+				<p>无线gprs何时何地都能轻松看订单<br>
+				  微信轻轻一点，打印机轻松打印
+				</p>
 			</dd>
 			<dd class="vborder">
 				<a>
@@ -414,12 +430,13 @@ $('#loginBox').keydown(function(e){
 				</a>
 				<p>微信公众号建立商圈<br>吃喝玩乐应有尽有</p>
 			</dd>
-            <dd>
-				<a>
+			<dd  class="vborder">
+				<a href="<?php echo U('Home/Index/fc');?>#buy">
 					<div class="fimg icon buy"></div>
 					<h3>微团购</h3>
 				</a>
-				<p>团购搬进微信公众平台<br>同微信分享6亿用户</p>
+				<p>微团购从网络搬进微信公众平台<br>
+				  同微信分享团购，简单，方便</p>
 			</dd>
 
 			
@@ -530,8 +547,14 @@ $('#loginBox').keydown(function(e){
 						<img src="<?php echo RES;?>/images/case20.jpg?v=2013-12-06-5" alt="case20.jpg" />
 					</a>
 				</li>
-					</ul>
-		<div class="clearfix"></div>
+	  </ul>
+		<div class="clearfix"> 
+		  <div align="center" class="STYLE1">
+		    <p class="STYLE5 STYLE1 STYLE4">创你所想 想你所创</p>
+		    <p class="STYLE3">&nbsp; </p>
+		    <p class="STYLE6">创想微信不断推出新功能，降低您的运营成本，提高微信营销效果。 </p>
+		  </div>
+		</div>
 		<a id="prev2" class="prev" href="#"></a>
 		<a id="next2" class="next" href="#"></a>
 		<script type="text/javascript">
@@ -553,11 +576,20 @@ $('#loginBox').keydown(function(e){
 </div>
 
 
-<div class="footer">
+<style type="text/css">
+<!--
+.STYLE1 {color: #484848}
+.STYLE2 {font-size: larger}
+-->
+</style>
+<div class="footer STYLE1">
 	<div class="footer-content clearfix">
 		
 		<div class="copyright">
-			Copyright © 2011-2013 www.weilgo.com. All Rights Reserved 创想公司版权所有 
+			<p align="center" class="STYLE2">地址：海宁市西山路612号龙翔商务楼1506 </p>
+			<p align="center" class="STYLE2">联系方式：0573-87231707 13586378851 18868718085 QQ：1771472817 </p>
+			<p align="center" class="STYLE2"> Copyright © 2011-2013 www.weilgo.com. All Rights Reserved   海宁创想科技有限公司——海宁极限贸易有限公司 版权所有    —</p>
+			<p align="center" class="STYLE2">——浙ICP备12038865号-1——</p>
 		</div>
 	</div>
 </div>
@@ -566,35 +598,29 @@ $('#loginBox').keydown(function(e){
 	<div id="notice_message" style="position: absolute; left: 373.5px; top: 20%;">
 		<div class="title">公 告<a onclick="javascript:jQuery('#notice_mask').hide(),jQuery('#notice_message').hide();">×</a></div>
 		<div class="content">
-			<pre style="white-space:pre-wrap;"><p style="text-align:center;">
-	创想官网模板管理改版啦！
-</p>
-<p>
-	随着您们对于模板需求的增加，微官网模板也越来越多，为了以后创想能够有越来越多的漂亮模板，创想团队对模板进行的详细划分，以便您们能更加便捷的选择所需模板。
-</p>
-<p>
-	<span style="line-height:1.5;">亮点一：系统通过对创想7万多用户使用模板的数据统计，筛选出前10名的热门模板推荐给大家，让您能够一键就能找到最钟爱的模板，便捷又高效。</span>
-</p>
-<p>
-	<span style="line-height:1.5;">亮点二：模板进行了详细的划分，分别有经典大方、简约时尚、五彩斑斓、个性定制、VIP尊享，风格各异，根据您们官网模板的需求赶紧来体验吧！</span>
-</p>
-<p>
-	VIP尊享仅支持增强版、至尊版及行业版商户，如果您没有权限，并且已经使用此类模板，请谨慎替换，一旦替换则不能再次使用，给您带来的不便尽请谅解。
-</p>
-<p style="text-align:right;">
-	创想
+		  <pre style="white-space:pre-wrap;"><p style="text-align:center;">创想微信联盟————VIP微信公众号展示!</p>                              海宁微信第一公众号[海宁未来购生活]
+
+海宁未来购生活官方号--代言人模特--蒋峰--打造海宁最大的娱乐休闲生活全媒体平台（吃货，购物，团购，优惠券，同城活动，便民服务等功能）本地生活尽在这里！
+</pre>
+<a href="javascript:void(0);"></a>
+<pre style="white-space:pre-wrap;"> 
+<p><img src="<?php echo RES;?>/images/shouye1.JPG" width="600px"></p>
+  <div class="pic"><p style="text-align:right;">
+	创想微信营销
 </p>
 <p style="text-align:right;">
 	2013-12-08
-</p></pre>
+</p>
+			</div>
+			</pre>
 		</div>
 	</div>
 
 <div class="erwei" title="微信扫一扫">
 	<span class="hudongzhushou">官方微信</span>
-	<div class="erwei_big" style="display:none;">
-		<p>扫一扫，关注创想官方微信，体验创想智能服务</p>
-	</div>
-</div>
+  <div class="erwei_big" style="display:none;">
+	  <p>扫一扫，关注创想官方微信，体验创想智能</p>
+  </div>
+[海宁微生活]</div>
 </body>
 </html>
