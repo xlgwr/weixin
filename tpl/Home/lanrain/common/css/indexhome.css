@@ -818,7 +818,7 @@ th {
 	left: 550px; top: 280px; text-align: right;
 }
 .banner .text h4 {
-	font: bold 20px/28px "Î¢ÈíÑÅºÚ", "ºÚÌå"; color: rgb(255,255,255); padding-top: 15px; font-size-adjust: none; font-stretch: normal; text-shadow: 1px 0px 2px #333333;
+	font: bold 20px/28px "Î¢ï¿½ï¿½ï¿½Åºï¿½", "ï¿½ï¿½ï¿½ï¿½"; color: rgb(255,255,255); padding-top: 15px; font-size-adjust: none; font-stretch: normal; text-shadow: 1px 0px 2px #333333;
 }
 .banner .text h4 span {
 	margin: 80px 0px 50px; color: rgb(255,255,255); line-height: 36px; letter-spacing: 2px; font-size: 28px; display: block; text-shadow: 1px 1px #3a5985;
@@ -833,7 +833,7 @@ th {
 	color: rgb(246, 244, 22); letter-spacing: 2px; margin-right: 5px;
 }
 .banner .text p {
-	width: 337px; color: rgb(42, 42, 42); font-family: "ËÎÌå"; margin-top: 5px;
+	width: 337px; color: rgb(42, 42, 42); font-family: "ï¿½ï¿½ï¿½ï¿½"; margin-top: 5px;
 }
 .banner .text .start {
 	margin: 30px 0px 0px; width: 273px; height: 73px; display: block;
@@ -2505,4 +2505,8 @@ select {
 }
 .feed-btn:hover {
 	background: url("img/feedbackbot.png") no-repeat;
+}
+.regin{
+         position:relative;
+         left:10px;
 }
