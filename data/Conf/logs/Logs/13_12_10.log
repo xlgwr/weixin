@@ -2573,3 +2573,727 @@ INFO: [ view_end ] --START--
 INFO: Run ShowPageTrace Behavior [ RunTime:-0.048120s ]
 INFO: [ view_end ] --END-- [ RunTime:0.001505s ]
 
+[ 2013-12-10T09:09:00+08:00 ] 183.62.75.12 /index.php?g=Home&m=Index&a=fc
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001787s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002013s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.006235s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001699s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\b719357359ce6769d919ad560d3bd861.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\b719357359ce6769d919ad560d3bd861.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.008041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031006s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.039148s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.040381s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.041542s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.042540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004688s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.043988s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001449s ]
+
+[ 2013-12-10T09:09:04+08:00 ] 183.62.75.12 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001628s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.005800s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001726s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.007664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046089s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.053848s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.055320s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.056883s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.057972s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005608s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.059630s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001605s ]
+
+[ 2013-12-10T09:14:15+08:00 ] 183.62.75.12 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001663s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.005168s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001686s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.006944s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031187s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.038387s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.039620s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.040863s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.041817s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004892s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.043338s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001473s ]
+
+[ 2013-12-10T13:58:11+08:00 ] 115.208.183.25 /index.php?g=User&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001860s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\User\IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.002465s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.002205s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = 22 ) LIMIT 1   [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `tp_wxuser` [ RunTime:0.002359s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `tp_wxuser` WHERE ( `token` = 'evpcay1386491540' ) AND ( `uid` = 22 ) LIMIT 1   [ RunTime:0.000242s ]
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001718s ]
+SQL: SELECT * FROM `tp_user_group`  [ RunTime:0.000201s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_wxuser` WHERE ( `uid` = 22 ) LIMIT 1   [ RunTime:0.000167s ]
+SQL: SELECT * FROM `tp_wxuser` WHERE ( `uid` = 22 ) LIMIT 0,25   [ RunTime:0.000193s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.041146s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002370s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\56f7804e54d354c9c14b7fc522e75478.php 第 51 行.
+NOTIC: [8] Undefined variable: alert D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\56f7804e54d354c9c14b7fc522e75478.php 第 240 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.043680s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038027s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.081765s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.082919s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.084273s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.085180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004684s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.086577s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001453s ]
+
+[ 2013-12-10T13:58:13+08:00 ] 115.208.183.25 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001560s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.005072s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001803s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.006988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033484s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.040617s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.041938s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.043146s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.044092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004898s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.045681s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001543s ]
+
+[ 2013-12-10T14:25:33+08:00 ] 115.208.183.25 /index.php?g=System&m=Admin&a=logout
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001509s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.004248s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001517s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.005845s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021433s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.027364s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.028419s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.029648s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.030591s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004528s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.032044s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001515s ]
+
+[ 2013-12-10T14:25:35+08:00 ] 115.208.183.25 /index.php?g=Home&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001750s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.005279s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001645s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.007045s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032813s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.039948s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.041178s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.042347s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.043283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004603s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.044685s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001614s ]
+
+[ 2013-12-10T14:25:37+08:00 ] 115.208.183.25 /index.php?m=Index&a=login
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001696s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.008567s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001538s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\52f87a7eb8f08d96b8a13f27c31684b4.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\52f87a7eb8f08d96b8a13f27c31684b4.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.010191s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021780s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.032049s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.033155s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.034363s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.035242s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004430s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.036605s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001419s ]
+
+[ 2013-12-10T14:25:48+08:00 ] 115.208.183.25 /index.php?m=Users&a=checkreg
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001705s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.001924s ]
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001616s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000315s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `email` = '1771472817@qq.com' ) LIMIT 1   [ RunTime:0.000307s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.029980s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001942s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.032066s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014488s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.046630s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.047855s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.049032s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.050046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004717s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.051467s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001588s ]
+
+[ 2013-12-10T14:25:50+08:00 ] 115.208.183.25 /index.php?m=Index&a=reg
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002441s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.006432s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001908s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\94646f0357bfd06757437fe3b0b3b0e0.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\94646f0357bfd06757437fe3b0b3b0e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.008426s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024973s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.033543s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.034894s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.036217s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.037279s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005254s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.039004s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001608s ]
+
+[ 2013-12-10T14:26:03+08:00 ] 115.208.183.25 /index.php?m=Users&a=checkreg
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002901s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.002126s ]
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001635s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000177s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `email` = 'weilgo7125@163.com' ) LIMIT 1   [ RunTime:0.000350s ]
+NOTIC: [2] md5() expects at least 1 parameter, 0 given D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Model.class.php 第 876 行.
+SQL: INSERT INTO `tp_users` (`username`,`password`,`email`,`createtime`,`createip`,`viptime`,`lasttime`,`lastip`,`status`,`gid`) VALUES ('admin','e10adc3949ba59abbe56e057f20f883e','weilgo7125@163.com',1386656763,'115.208.183.25',1386656763,1386656763,'115.208.183.25',0,1) [ RunTime:0.000367s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.031302s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001971s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.033372s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014073s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.047544s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.048715s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.049909s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.050864s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004645s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.052321s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001651s ]
+
+[ 2013-12-10T14:26:04+08:00 ] 115.208.183.25 /index.php?g=User&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001651s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\User\IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001758s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.001746s ]
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\UserAction.class.php 第 6 行.
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `tp_wxuser` [ RunTime:0.001709s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `tp_wxuser` WHERE ( `token` = null ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000168s ]
+
+[ 2013-12-10T14:26:04+08:00 ] 115.208.183.25 /index.php?g=Home&m=Index&a=login
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001578s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.005931s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001733s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\52f87a7eb8f08d96b8a13f27c31684b4.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\52f87a7eb8f08d96b8a13f27c31684b4.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.007786s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024930s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.032834s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.034052s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.035364s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.036468s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005049s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.038023s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001540s ]
+
+[ 2013-12-10T14:26:41+08:00 ] 115.208.183.25 /index.php?m=Users&a=checklogin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001640s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.002648s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000383s ]
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001465s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000176s ]
+SQL: UPDATE `tp_users` SET `lasttime`=1386656801,`lastip`='115.208.183.25' WHERE ( `id` = 26 ) [ RunTime:0.000336s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.029205s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001419s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.030710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013655s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.044460s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.045485s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.046553s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.047464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004276s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.048853s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001489s ]
+
+[ 2013-12-10T14:26:43+08:00 ] 115.208.183.25 /index.php?g=User&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002016s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\User\IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001853s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.001987s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = 26 ) LIMIT 1   [ RunTime:0.000380s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.028969s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001689s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.030788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014835s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.045803s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.047009s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.048204s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.049203s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005026s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.050926s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001706s ]
+
+[ 2013-12-10T14:26:47+08:00 ] 115.208.183.25 /index.php?g=User&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001656s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\User\IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001792s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000187s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.001646s ]
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\UserAction.class.php 第 6 行.
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `tp_wxuser` [ RunTime:0.002275s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `tp_wxuser` WHERE ( `token` = null ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000216s ]
+
+[ 2013-12-10T14:26:48+08:00 ] 115.208.183.25 /index.php?g=Home&m=Index&a=login
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001540s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.005368s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001569s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\52f87a7eb8f08d96b8a13f27c31684b4.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\52f87a7eb8f08d96b8a13f27c31684b4.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.007013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022765s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.029941s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.031673s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.033575s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.034501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005918s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.035955s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001420s ]
+
+[ 2013-12-10T14:27:02+08:00 ] 115.208.183.25 /index.php?m=Users&a=checklogin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001615s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.002074s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001636s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000168s ]
+SQL: UPDATE `tp_users` SET `lasttime`=1386656822,`lastip`='115.208.183.25' WHERE ( `id` = 26 ) [ RunTime:0.000337s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.028335s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001593s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.030047s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014776s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.044915s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.045987s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.047151s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.048061s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004402s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.049440s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001463s ]
+
+[ 2013-12-10T14:27:03+08:00 ] 115.208.183.25 /index.php?g=User&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001703s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\User\IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.002190s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.002417s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = 26 ) LIMIT 1   [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `tp_wxuser` [ RunTime:0.002622s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `tp_wxuser` WHERE ( `token` = null ) AND ( `uid` = 26 ) LIMIT 1   [ RunTime:0.016022s ]
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.002819s ]
+SQL: SELECT * FROM `tp_user_group`  [ RunTime:0.000468s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_wxuser` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.000368s ]
+SQL: SELECT * FROM `tp_wxuser` WHERE ( `uid` = 26 ) LIMIT 0,25   [ RunTime:0.000346s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.059756s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001717s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\56f7804e54d354c9c14b7fc522e75478.php 第 51 行.
+NOTIC: [8] Undefined variable: alert D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\56f7804e54d354c9c14b7fc522e75478.php 第 240 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.061593s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029430s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.091094s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.092280s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.093509s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.094517s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004874s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.096108s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001562s ]
+
+[ 2013-12-10T14:27:05+08:00 ] 115.208.183.25 /index.php?g=User&m=Index&a=add
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001758s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\User\IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.002503s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.001838s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = 26 ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `tp_wxuser` [ RunTime:0.001880s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `tp_wxuser` WHERE ( `token` = null ) AND ( `uid` = 26 ) LIMIT 1   [ RunTime:0.000175s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.034801s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001838s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\abcb2dc0cdf6cecdbc543733dfd2e7d4.php 第 51 行.
+NOTIC: [8] Undefined variable: province D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\abcb2dc0cdf6cecdbc543733dfd2e7d4.php 第 141 行.
+NOTIC: [8] Undefined variable: city D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\abcb2dc0cdf6cecdbc543733dfd2e7d4.php 第 141 行.
+NOTIC: [8] Undefined variable: alert D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\abcb2dc0cdf6cecdbc543733dfd2e7d4.php 第 262 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.036801s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027638s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.064530s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.065816s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.067127s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.068156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005067s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.069747s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001581s ]
+
+[ 2013-12-10T14:27:08+08:00 ] 115.208.183.25 /index.php?g=User&m=Alipay&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001663s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.002113s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.001766s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = 26 ) LIMIT 1   [ RunTime:0.000208s ]
+SQL: SHOW COLUMNS FROM `tp_wxuser` [ RunTime:0.001970s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `tp_wxuser` WHERE ( `token` = null ) AND ( `uid` = 26 ) LIMIT 1   [ RunTime:0.000210s ]
+SQL: SELECT `id`,`name`,`price` FROM `tp_user_group` WHERE price>0  [ RunTime:0.000324s ]
+SQL: SELECT `price` FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000288s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.032445s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001753s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\3a74c416b40e6d9fcd9c9fdc16f8a916.php 第 52 行.
+NOTIC: [8] Undefined variable: alert D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\3a74c416b40e6d9fcd9c9fdc16f8a916.php 第 284 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.034302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033580s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.067975s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.069286s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.070403s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.071282s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004546s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.072639s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001470s ]
+
+[ 2013-12-10T14:27:12+08:00 ] 115.208.183.25 /index.php?g=User&m=Alipay&a=post
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001680s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001837s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.001895s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = 26 ) LIMIT 1   [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `tp_wxuser` [ RunTime:0.002052s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `tp_wxuser` WHERE ( `token` = null ) AND ( `uid` = 26 ) LIMIT 1   [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `tp_indent` [ RunTime:0.002019s ]
+SQL: INSERT INTO `tp_indent` (`uid`,`title`,`uname`,`gid`,`create_time`,`indent_id`,`price`) VALUES (26,'充值vip会员1个月','admin',1,1386656832,'admin1386656832',1) [ RunTime:0.000386s ]
+
+[ 2013-12-10T17:01:23+08:00 ] 183.62.75.12 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001819s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.006710s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001942s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.008745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042079s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.050950s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.052425s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.053917s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.054878s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005348s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.056446s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001602s ]
+
+[ 2013-12-10T17:09:22+08:00 ] 183.62.75.12 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003252s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.008362s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001980s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.010421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033233s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.043742s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.045143s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.046559s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.047592s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005515s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.049407s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001640s ]
+
+[ 2013-12-10T17:14:46+08:00 ] 183.62.75.12 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001810s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002023s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.005763s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001920s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.007773s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032974s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.040858s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.042341s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.043574s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.044537s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005076s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.046094s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001486s ]
+
+[ 2013-12-10T17:15:09+08:00 ] 183.62.75.12 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002007s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.006441s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002109s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+NOTIC: [8] Undefined index:  uid D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.008645s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048167s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.057110s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.059436s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.061559s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.063283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008480s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.066032s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003418s ]
+
+[ 2013-12-10T17:19:10+08:00 ] 115.208.183.25 /index.php?g=User&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001641s ]
+NOTIC: [2048] Declaration of IndexAction::insert() should be compatible with that of BaseAction::insert() D:\wwwroot\weilgot8081\wwwroot\Lanrain\Lib\Action\User\IndexAction.class.php 第 2 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.003153s ]
+SQL: SELECT * FROM `tp_user_group` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000208s ]
+SQL: SHOW COLUMNS FROM `tp_users` [ RunTime:0.002075s ]
+SQL: SELECT * FROM `tp_users` WHERE ( `id` = 22 ) LIMIT 1   [ RunTime:0.000206s ]
+SQL: SHOW COLUMNS FROM `tp_wxuser` [ RunTime:0.002092s ]
+SQL: SELECT `wxname`,`wxid`,`headerpic`,`weixin` FROM `tp_wxuser` WHERE ( `token` = 'evpcay1386491540' ) AND ( `uid` = 22 ) LIMIT 1   [ RunTime:0.000201s ]
+SQL: SHOW COLUMNS FROM `tp_user_group` [ RunTime:0.001594s ]
+SQL: SELECT * FROM `tp_user_group`  [ RunTime:0.000183s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_wxuser` WHERE ( `uid` = 22 ) LIMIT 1   [ RunTime:0.000166s ]
+SQL: SELECT * FROM `tp_wxuser` WHERE ( `uid` = 22 ) LIMIT 0,25   [ RunTime:0.000229s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.042433s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001765s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\56f7804e54d354c9c14b7fc522e75478.php 第 51 行.
+NOTIC: [8] Undefined variable: alert D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\User\56f7804e54d354c9c14b7fc522e75478.php 第 240 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.044314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031387s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.075874s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.078367s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.080667s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.082349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008823s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.084956s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002567s ]
+
+[ 2013-12-10T17:19:12+08:00 ] 115.208.183.25 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003204s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.010198s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001742s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.012073s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034697s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.046840s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.048081s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.049379s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.050342s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005363s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.052625s ]
+INFO: [ view_end ] --END-- [ RunTime:0.004572s ]
+
+[ 2013-12-10T17:19:14+08:00 ] 115.208.183.25 /index.php?g=Home&m=Index&a=fc
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001581s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.005444s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001678s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\b719357359ce6769d919ad560d3bd861.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.007207s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034192s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.041489s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.042683s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.043835s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.044732s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004569s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.046196s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001425s ]
+
+[ 2013-12-10T17:19:15+08:00 ] 115.208.183.25 /index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002611s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wwwroot\weilgot8081\wwwroot\Lib\Core\Action.class.php 第 206 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.008987s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002889s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant uid - assumed 'uid' D:\wwwroot\weilgot8081\wwwroot\data\Conf\logs\Cache\Home\6fec05cdeb567bdd6f06e8ce37bfd4e0.php 第 86 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.012036s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032706s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.044976s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.047749s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.050242s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.051661s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008176s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.053290s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001707s ]
+

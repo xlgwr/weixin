@@ -18,10 +18,7 @@
     <p>集团网站：<a href="#" class="blue">公司网站</a></p>
     <p>系统版本：LanRain W_5_0_201306260001_UTF8 <a href="javascript:alert('暂无升级')" class="isub">检查更新</a></p>
     </div>
-    <ul class="myinfo">
-   <li><p class="red">如果您的程序不是在&nbsp;&nbsp;湘雨软件园&nbsp;&nbsp;购买的，请查看程序是否完整</p><span></span></li>
-   <li><p class="red"><a href="http://youhuawang.taobao.com" target="_blank" >http://youhuawang.taobao.com</a></p>
-	</ul>
+    
     </div>
 </div>
 <!--/box-->

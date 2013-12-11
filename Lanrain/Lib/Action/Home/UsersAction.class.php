@@ -13,6 +13,7 @@ class UsersAction extends BaseAction{
 		$pwd=$this->_post('password','trim,md5');
 		$res=$db->where($where)->find();
 		if($res&&($pwd===$res['password'])){
+			
 			if($res['status']==0){
 				$this->error('请联系在线客户，为你人工审核帐号');exit;
 			}
@@ -25,16 +26,27 @@ class UsersAction extends BaseAction{
 			session('activitynum',$res['activitynum']);
 			session('viptime',$res['viptime']);
 			session('gname',$info['name']);
-			$tt=getdate();
-			if($tt['mday']===1){
+			//每个月第一次登陆数据清零
+			$now=time();
+			$month=date('m',$now);
+			if($month!=$res['lastloginmonth']&&$res['lastloginmonth']!=0){
 				$data['id']=$res['id'];
 				$data['imgcount']=0;
+				$data['diynum']=0;
 				$data['textcount']=0;
 				$data['musiccount']=0;
+				$data['connectnum']=0;
 				$data['activitynum']=0;
 				$db->save($data);
+				//
+				session('diynum',0);
+				session('connectnum',0);
+				session('activitynum',0);
 			}
-			$db->where(array('id'=>$res['id']))->save(array('lasttime'=>time(),'lastip'=>$_SERVER['REMOTE_ADDR']));//最后登录时间
+			//登陆成功，记录本月的值到数据库
+			
+			//
+			$db->where(array('id'=>$res['id']))->save(array('lasttime'=>$now,'lastloginmonth'=>$month,'lastip'=>$_SERVER['REMOTE_ADDR']));//最后登录时间
 			$this->success('登录成功',U('User/Index/index'));
 		}else{
 			$this->error('帐号密码错误',U('Index/login'));
@@ -50,6 +62,8 @@ class UsersAction extends BaseAction{
 				if(C('ischeckuser')!='true'){
 					$this->success('注册成功,请联系在线客服审核帐号',U('User/Index/index'));exit;
 				}
+				$viptime=time()+3*24*3600;
+				$db->where(array('id'=>$id))->save(array('viptime'=>$viptime));
 				session('uid',$id);
 				session('gid',1);
 				session('uname',$_POST['username']);
@@ -74,7 +88,7 @@ class UsersAction extends BaseAction{
 				// $body=$fetchcontent;
 				//$body = iconv('UTF-8','gb2312',$fetchcontent);
 				// $send=$smtp->sendmail($to,$sender,$subject,$body,$mailtype);
-					
+			    
 				$this->success('注册成功',U('User/Index/index'));
 			}else{
 				$this->error('注册失败',U('Index/reg'));

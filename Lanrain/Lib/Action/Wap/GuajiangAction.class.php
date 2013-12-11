@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 class GuajiangAction extends BaseAction{
 	public function index(){
 		$agent = $_SERVER['HTTP_USER_AGENT']; 
-		if(!strpos($agent,"MicroMessenger")) {
-			echo '此功能只能在微信浏览器中使用';exit;
-		}
+		//if(!strpos($agent,"icroMessenger")) {
+		//	echo '此功能只能在微信浏览器中使用';exit;
+		//}
 	 
 		$token	  =  $this->_get('token');
 		$wecha_id = $this->_get('wecha_id');
@@ -47,12 +47,12 @@ class GuajiangAction extends BaseAction{
 					
 					M('Lottery_record')->where(array('id'=>$record['id']))->setInc('usenums');
 					$record = M('Lottery_record')->where(array('id'=>$record['id']))->find();
-					$firstNum=intval($Lottery['fistnums']);
-					$secondNum=intval($Lottery['secondnums']);
-					$thirdNum=intval($Lottery['thirdnums']);
-					$fourthNum=intval($Lottery['fournums']);
-					$fifthNum=intval($Lottery['fivenums']);
-					$sixthNum=intval($Lottery['sixnums']);
+					$firstNum=intval($Lottery['fistnums'])-intval($Lottery['fistlucknums']);
+					$secondNum=intval($Lottery['secondnums'])-intval($Lottery['secondlucknums']);
+					$thirdNum=intval($Lottery['thirdnums'])-intval($Lottery['thirdlucknums']);
+					$fourthNum=intval($Lottery['fournums'])-intval($Lottery['fourlucknums']);
+					$fifthNum=intval($Lottery['fivenums'])-intval($Lottery['fivelucknums']);
+					$sixthNum=intval($Lottery['sixnums'])-intval($Lottery['sixlucknums']);
 					$multi=intval($Lottery['canrqnums']);//最多抽奖次数
 					$prize_arr = array(
 					'0' => array('id'=>1,'prize'=>'一等奖','v'=>$firstNum,'start'=>0,'end'=>$firstNum),
@@ -132,7 +132,7 @@ class GuajiangAction extends BaseAction{
 								$winprize = '谢谢参与';
 								break;
 					}
-				 M('Lottery')->where(array('id'=>$lid))->setInc('click');
+				
 				//$data['prizeid']  	= $rid;
 				$data['zjl'] 		= $zjl;
 				$data['wecha_id']	= $record['wecha_id'];		
@@ -179,6 +179,7 @@ class GuajiangAction extends BaseAction{
 			$prizeStr.='</p>';
 		}
 		$this->assign('prizeStr',$prizeStr);
+		//print_r($prizeStr);die;
 		$this->display();
 		
 	}
@@ -211,29 +212,7 @@ class GuajiangAction extends BaseAction{
 			$data['sn']			= uniqid();
 			$rollback = M('Lottery_record')->where(array('lid'=> $lid,
 				'wecha_id'=>$wechaid))->save($data);
-				
-				
-			$list = M('Lottery_record')->where(array('lid'=> $lid,
-				'wecha_id'=>$wechaid))->find();
-			
-			/*$base_call = M('Call');
-			$data_call['token'] = $list['token'];
-			$call = $base_call->where($data_call)->find();
-			
-			if($call['status'] == 1){
-				$sms = new Sms("http://www.189lt.com:9000/servlet/UserServiceAPI",$call['phone_account'],$call['phone_password'],1);
-				$txt = $sms->sendsms($data['phone'],"恭喜！尊敬的 ".$data['wecha_name'].",请您保持手机通畅！请您牢记的领奖号:".$data['sn']);
-				
-				echo $txt;
-				echo '<br/>';
-			}else{
-				echo '请先开启短信发送设置';
-				echo '<br/>';
-			}	*/
-				
 			echo'{"success":1,"msg":"恭喜！尊敬的'.$data['wecha_name'].'请您保持手机通畅！请您牢记的领奖号:'.$data['sn'].'"}';
-			M('Lottery')->where(array('id'=>$lid))->setInc('joinnum');
-            M('Lottery')->where(array('id'=>$lid))->setInc('click');
 			exit;
 		}
 /*

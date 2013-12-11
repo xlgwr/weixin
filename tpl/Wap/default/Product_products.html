@@ -36,6 +36,7 @@
 	</section>
 <a class="more" id="show_more" page="2" style="display: none;" href="javascript:void(0);">加载更多</a>
 	<input type="hidden" value="1" id="pageid" />
+	<input type="hidden" id="canScroll" value="1" />
 <script type="text/javascript">
 $(function() {
 	$('#search_form').submit(function() {
@@ -86,12 +87,18 @@ $(function() {
 					return;
 				}
 				$('#show_more').show().html('加载中...');
+				
+				if($('#canScroll').val()==0){//不要重复加载
+					return;
+				}
+				$('#canScroll').attr('value',0);
 				$.ajax({
 					type : "GET",
 					data : {'page' : _page, 'inajax' : 1},
 					url :  b_url + '&order=' + order + '&method=' + method + '&pagesize='+pagesize,
 					dataType : "json",
 					success : function(RES) {
+						$('#canScroll').attr('value',1);
 						$('#show_more').hide().html('加载更多');
 						
 						data = RES.products;

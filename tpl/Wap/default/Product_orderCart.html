@@ -6,6 +6,22 @@
 <if condition="$cartIsDining eq 1">
 <a class="more" id="show_more" href="javascript:void(0);" style="color:#fff;background:#f90">属于餐饮类订单，请先填写点餐方式等信息</a>
 <input type="hidden" name="diningtype" id="diningtype" value="3" />
+   <div class="p_mod table_1 table_3 desks" id="desks" style="display: block;" >
+        <h2 class="p_mod_title">请填写就餐时间</h2>
+        <dl class="f_order_list single">
+        <select name="buytimestamp" id="buytimestamp" onchange="tables()">
+        <volist name="dateTimes" id="d">
+        <option value="{lanrain:$d}"><php>echo date('m月d日',$d);</php></option>
+        </volist>
+        </select> <select name="hour" id="hour" onchange="tables()">
+        <option value="" selected>选择时间</option>
+        <volist name="hours" id="h">
+        <option value="{lanrain:$h}"><php>echo $h.'时';</php></option>
+        </volist>
+        </select>
+          <input type="hidden" placeholder="请输入具体日期和时间" id="buytime" name="buytime" value="" />
+                  </dl>
+        </div>
 <if condition="$totalProductCount neq 0">
 <div class="p_mod">
         <h2 class="p_mod_title">您的点餐方式</h2>
@@ -29,22 +45,7 @@
 
         
         
-        <div class="p_mod table_1 table_3 desks" id="desks" style="display: block;" >
-        <h2 class="p_mod_title">请填写就餐时间</h2>
-        <dl class="f_order_list single">
-        <select name="buytimestamp" id="buytimestamp" onchange="tables()">
-        <volist name="dateTimes" id="d">
-        <option value="{lanrain:$d}"><php>echo date('m月d日',$d);</php></option>
-        </volist>
-        </select> <select name="hour" id="hour" onchange="tables()">
-        <option value="" selected>选择时间</option>
-        <volist name="hours" id="h">
-        <option value="{lanrain:$h}"><php>echo $h.'时';</php></option>
-        </volist>
-        </select>
-          <input type="hidden" placeholder="请输入具体日期和时间" id="buytime" name="buytime" value="" />
-                  </dl>
-        </div>
+     
         
         
         <if condition="$tables">
@@ -78,7 +79,7 @@
     	</div>
     	<div class="o_btn clearfix">
     		<input type="button" class="o_btn_back ts1" onclick="history.go(-1);" value="返回" />
-    		<input type="submit" class="o_btn_submit ts1" value="保存" />
+    		<input type="submit" class="o_btn_submit ts1" value="<if condition="($alipayConfig.open eq 0) OR ($totalProductFee lt 0.1)">保存<else/>保存并付款</if>" />
     	</div>
     
 </div>
@@ -110,7 +111,7 @@ function showTip(tipTxt) {
         }, 1500);
 		}
 	function tgSubmit(){
-		if($('#hour')){
+		if($('#hour')&&$('#desks').css.display=='block'){
 			if($('#hour').val()==""){
 				showTip('请选择时间')
 				return false;
@@ -130,7 +131,7 @@ function showTip(tipTxt) {
 			return false;
 		}
 
-		var patrn = /^(1(([35][0-9])|(47)|[8][0126789]))\d{8}$/;
+		var patrn = /^(1(([35][0-9])|(47)|[8][01256789]))\d{8}$/;
 		if (!patrn.exec($.trim(userPhone))) {
 			showTip('手机号格式错误')
 			return false;

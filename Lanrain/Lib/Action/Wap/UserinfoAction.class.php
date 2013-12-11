@@ -2,8 +2,8 @@
 class UserinfoAction extends BaseAction{
 	public function index(){
 		$agent = $_SERVER['HTTP_USER_AGENT']; 
-		if(!strpos($agent,"MicroMessenger")) {
-			//echo '此功能只能在微信浏览器中使用';exit;
+		if(!strpos($agent,"icroMessenger")) {
+			echo '此功能只能在微信浏览器中使用';exit;
 		}
 		//$sql=D('Userinfo');
 		$card = D('Member_card_create'); 
@@ -56,7 +56,8 @@ class UserinfoAction extends BaseAction{
 						$card_up=M('Member_card_create')->where(array('id'=>$card['id']))->save(array('number'=>$card['number'],'wecha_id'=>$data['wecha_id']));
 						//写入会员卡信息
 						$data['token'] = $this->_get('token');
-						$data['getcardtime'] = $_SERVER['REQUEST_TIME'];
+						$data['getcardtime'] = time();
+						//判断是否存在
 						M('Userinfo')->data($data)->add(); 
 						echo 2;exit;
 					}else{

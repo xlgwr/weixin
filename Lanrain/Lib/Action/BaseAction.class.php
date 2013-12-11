@@ -24,7 +24,8 @@ class BaseAction extends Action
                     'Lottery',
                     'Host',
                     'Product',
-                    'Selfform'
+                    'Selfform',
+	'Xitie'
                 );
                 if (in_array($name, $m_arr)) {
                     $data['pid']     = $id;

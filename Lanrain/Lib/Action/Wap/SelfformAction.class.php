@@ -89,6 +89,8 @@ class SelfformAction extends BaseAction{
 	public function detail(){
 		$formid=intval($_GET['id']);
 		$thisForm=$this->selfform_model->where(array('id'=>$formid))->find();
+		$thisForm['content']=html_entity_decode($thisForm['content']);
+		//$thisForm['intro']=str_replace(array('&lt;','&gt;','&quot;','&amp;nbsp;'),array('<','>','"',' '),$thisForm['intro']);
 		$this->assign('thisForm',$thisForm);
 		$this->display();
 	}

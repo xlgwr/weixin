@@ -1,7 +1,7 @@
 <include file="Public:head"/>
 <script src="{lanrain::RES}/js/date/WdatePicker.js"></script>
  <form class="form" method="post"   action=""  target="_top" enctype="multipart/form-data" >
-        <div class="content">
+        <div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
 <!--活动开始-->
 <div class="cLineB">
     <h4>编辑幸运大转盘活动开始内容</h4><a href="javascript:history.go(-1);"  class="right btnGrayS vm" style="margin-top:-27px" >返回</a>
@@ -11,8 +11,8 @@
 <TR>
   <th valign="top"><span class="red">*</span>关键词：</th>
   <TD>
-	<input type="hidden" class="px" value="1" name="type" style="width:400px" >
-	<input type="input" class="px" id="keyword" value="<if condition="$vo['keyword'] eq ''">大转盘<else/>{lanrain:$vo.keyword}</if>" name="keyword" style="width:400px" ><br />
+	<input type="hidden" class="px" value="1" name="type" style="width:350px" >
+	<input type="input" class="px" id="keyword" value="<if condition="$vo['keyword'] eq ''">大转盘<else/>{lanrain:$vo.keyword}</if>" name="keyword" style="width:350px" ><br />
   	<span class="red">只能写一个关键词</span>，用户输入此关键词将会触发此活动。
   </TD>
   <TD rowspan="7" valign="top">
@@ -28,20 +28,20 @@
 <TR>
   <th valign="top"><span class="red">*</span>活动名称：</th>
   <TD>
-	<input type="input" class="px" id="title" value="<if condition="$vo['title'] eq ''">幸运大转盘活动开始了<else/>{lanrain:$vo.title}</if>" name="title" style="width:400px" />
+	<input type="input" class="px" id="title" value="<if condition="$vo['title'] eq ''">幸运大转盘活动开始了<else/>{lanrain:$vo.title}</if>" name="title" style="width:350px" />
   	<br />
   	请不要多于50字!
   </TD>
   <TR>
   	<th valign="top"><span class="red">*</span>兑奖信息：</th>
   	<td>
-		<input type="input" class="px" id="txt" value="<if condition="$vo['txt'] eq ''">兑奖请联系我们，电话18950099999<else/>{lanrain:$vo.txt}</if>" name="txt" style="width:400px" />
+		<input type="input" class="px" id="txt" value="<if condition="$vo['txt'] eq ''">兑奖请联系我们，电话18950099999<else/>{lanrain:$vo.txt}</if>" name="txt" style="width:350px" />
   		<br />请不要多于100字! 这个设定但用户输入兑奖时候的显示信息!
 	</td>
   </TR>
  <TR>
   	<th valign="top"><span class="red">*</span>中奖提示：</th>
-  	<td><textarea class="px" id="sttxt"  name="sttxt" style="width:400px"  >{lanrain:$vo.sttxt}</textarea> 中奖后,提示信息
+  	<td><textarea class="px" id="sttxt"  name="sttxt" style="width:350px"  >{lanrain:$vo.sttxt}</textarea> 中奖后,提示信息
   		 </td>
 </TR>
 <TR>
@@ -53,13 +53,13 @@
 </TR>
 <TR>
 <th valign="top">活动说明：</th>
-<td><textarea  class="px" id="info" name="info"  style="width:400px; height:125px" ><if condition="$vo['info'] eq ''">亲，请点击进入大转盘抽奖活动页面，祝您好运哦！<else/>{lanrain:$vo.info}</if></textarea><br />换行请输入
+<td><textarea  class="px" id="info" name="info"  style="width:350px; height:125px" ><if condition="$vo['info'] eq ''">亲，请点击进入大转盘抽奖活动页面，祝您好运哦！<else/>{lanrain:$vo.info}</if></textarea><br />换行请输入
  &lt;br&gt;
  </td>
 </TR>
 <TR>
 <th><span class="red">*</span>重复抽奖回复：</th>
-<td><input type="input" class="px" id="aginfo" value="<if condition="$vo['aginfo'] eq ''">亲，继续努力哦！<else/>{lanrain:$vo.aginfo}</if>" name="aginfo" style="width:400px" />备注：
+<td><input type="input" class="px" id="aginfo" value="<if condition="$vo['aginfo'] eq ''">亲，继续努力哦！<else/>{lanrain:$vo.aginfo}</if>" name="aginfo" style="width:350px" />备注：
 如果设置只允许抽一次奖的，请写：你已经玩过了，下次再来。
 
 如果设置可多次抽奖，请写：亲，继续努力哦！</td>
@@ -77,7 +77,7 @@
   		<tbody>
   			<tr>
   				<th valign="top"><span class="red">*</span>活动结束公告主题：</th>
-  				<td><input type="input" class="px" id="endtite" value="<if condition="$vo['endtite'] eq ''">幸运大转盘活动已经结束了<else/>{lanrain:$vo.endtite}</if>" name="endtite" style="width:400px" />
+  				<td><input type="input" class="px" id="endtite" value="<if condition="$vo['endtite'] eq ''">幸运大转盘活动已经结束了<else/>{lanrain:$vo.endtite}</if>" name="endtite" style="width:350px" />
   					<br />
   					请不要多于50字! </td>
   				<td rowspan="4" valign="top"><div style="margin-left:20px"><img  id="end" src="<if condition="$vo['endpicurl'] eq 0">{lanrain::C('site_url')}/tpl/Wap/default/common/css/guajiang/images/activity-lottery-end.jpg<else/>{lanrain:$vo.endpicurl}</if>"  width="373px"/> <br />
@@ -87,7 +87,7 @@
   				</tr>
   			<tr>
   				<th valign="top">活动结束说明：</th>
-  				<td valign="top"><textarea  class="px" id="endinfo" name="endinfo"  style="width:400px; height:125px" ><if condition="$vo['endinfo'] eq ''">亲，活动已经结束，请继续关注我们的后续活动哦。<else/>{lanrain:$vo.endinfo}</if></textarea><br />换行请输入
+  				<td valign="top"><textarea  class="px" id="endinfo" name="endinfo"  style="width:350px; height:125px" ><if condition="$vo['endinfo'] eq ''">亲，活动已经结束，请继续关注我们的后续活动哦。<else/>{lanrain:$vo.endinfo}</if></textarea><br />换行请输入
  &lt;br&gt;
   				  </td>
   				</tr>

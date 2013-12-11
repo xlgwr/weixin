@@ -27,60 +27,50 @@ a {
 	height:0;
 	overflow:hidden;
 }
-.copyright{padding:8px;text-align:center;font-size:14px;color:#666;}
+.copyright{padding:8px 0;text-align:center;font-size:14px;color:#666; position:fixed; bottom:0; width:100%; z-index:3}
 .copyright a{color:#666;}
-/*cate10*/
-#cate10{background-color: #FBF5E0;overflow-x: hidden;margin:0 auto;}
-#cate10 .banner img{
+/*cate16*/
+#cate16{background-color: #000000;overflow-x: hidden;}
+#cate16 .mainbg{ 
+	width:100%;
+	position:fixed;
+	z-index:1
+}
+#cate16 .mainbg img{
 	width:100%;
 }
-
-#cate10 .catemenu {
-overflow: hidden;
-background-color: transparent;
-border-radius: 4px;
-margin: 7px 5px 0 4px;
+#cate16 .mainmenu {
+  z-index:2;
+  color:#FFF;
+  position: fixed;
+  width: 56%;padding-top: 8px;
 }
-#cate10 .catemenu ul {
-width: 100%;
-overflow: hidden;
+#cate16 .mainmenu ul {
+	display: block;
 }
-#cate10 .catemenu li {
-display: list-item;
-text-align: -webkit-match-parent;
-}
-#cate10 .catemenu li {
-width: 33.3%;
+#cate16 .mainmenu li {
 float: left;
-font-size: 15px;
-border-top:0;
-}
-#cate10 .catemenu li:nth-child(n+4) a{
-padding:10px 5px;
-}
-#cate10 .catemenu li:nth-child(n+4) img{
-display:none
-}
-#cate10 .catemenu a{
+text-align: center;
 display: block;
-background-color: #FFFFFF;
-border: 1px solid #EEE9D6;
-border-radius: 3px;
-margin: 0 0 3px 3px;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-padding:20px 5px 10px;
-height:100%;
-text-align:center;
 }
-#cate10 .catemenu img {
-width: 48px;
-height: 48px;
-display:block;
-margin: 0 auto;
+#cate16 .mainmenu li .menubtn{
+width: 77px;
+height: 92px;
+margin-left: 8px;
+margin-bottom: 8px;
 position: relative;
-top: -5px;
-vertical-align: middle;
-border-radius: 3px;
+background-color:rgba(255, 152, 0, 0.5);
+border-radius: 5px;
+}
+#cate16 .mainmenu li img {
+width: 45px;
+height: 45px;
+margin-top: 15px;
+border-radius: 5px;
+}
+#cate16 .menutitle {
+color: #fff;
+font-size: 13px;
+display: block;
+text-align:center;
 }

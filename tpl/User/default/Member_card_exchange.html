@@ -11,6 +11,7 @@
 var editor;
 KindEditor.ready(function(K) {
 editor = K.create('#info', {
+minWidth:430,
 resizeType : 1,
 allowPreviewEmoticons : false,
 allowImageUpload : false,
@@ -24,6 +25,7 @@ items : [
 var editor;
 KindEditor.ready(function(K) {
 editor = K.create('#info2', {
+minWidth:430,
 resizeType : 1,
 allowPreviewEmoticons : false,
 allowImageUpload : false,
@@ -34,7 +36,7 @@ items : [
 });
 });
 </script>
-<div class="content">
+<div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
 	<div class="cLineB">
 	  <h4>积分设置 <span class="FAQ">设置会员卡积分策略及会员卡级别</span></h4>
 	  <a href="javascript:history.go(-1);" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
@@ -87,10 +89,10 @@ items : [
 		<table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
 			<tbody>
 				<tr>
-					<td valign="top">会员卡使用说明：<br>
+					<td valign="top" height="35" >会员卡使用说明：<br>
 						<textarea class="px" id="info" name="cardinfo" style="width: 400px; height: 200px; display: none;">{lanrain:$exchange.cardinfo}</textarea>
 					</td>
-					<td valign="top">积分规则说明：<br>
+					<td valign="top" height="35" >积分规则说明：<br>
 						<textarea class="px" id="info2" name="cardinfo2" style="width: 400px; height: 200px; display: none;">{lanrain:$exchange.cardinfo2}</textarea>
 					</td>
 				</tr>
