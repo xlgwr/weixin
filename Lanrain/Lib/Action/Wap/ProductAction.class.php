@@ -116,7 +116,7 @@ class ProductAction extends BaseAction{
 		if ($products){
 			$comma='';
 			foreach ($products as $p){
-				$str.=$comma.'{"id":"'.$p['id'].'","catid":"'.$p['catid'].'","storeid":"'.$p['storeid'].'","name":"'.$p['name'].'","price":"'.$p['price'].'","intro":"'.$p['intro'].'","token":"'.$p['token'].'","keyword":"'.$p['keyword'].'","salecount":"'.$p['salecount'].'","logourl":"'.$p['logourl'].'","time":"'.$p['time'].'","oprice":"'.$p['oprice'].'"}';
+				$str.=$comma.'{"id":"'.$p['id'].'","catid":"'.$p['catid'].'","storeid":"'.$p['storeid'].'","name":"'.$p['name'].'","price":"'.$p['price'].'","token":"'.$p['token'].'","keyword":"'.$p['keyword'].'","salecount":"'.$p['salecount'].'","logourl":"'.$p['logourl'].'","time":"'.$p['time'].'","oprice":"'.$p['oprice'].'"}';
 				$comma=',';
 			}
 		}
@@ -139,7 +139,7 @@ class ProductAction extends BaseAction{
 			$this->assign('leftSeconds',$leftSeconds);
 		}
 		$this->assign('metaTitle',$product['name']);
-		$product['intro']=str_replace(array('&lt;','&gt;'),array('<','>'),$product['intro']);
+		$product['intro']=str_replace(array('&lt;','&gt;','&quot;','&amp;nbsp;'),array('<','>','"',' '),$product['intro']);
 		$intro=$this->remove_html_tag($product['intro']);
 		$intro=mb_substr($intro,0,30,'utf-8');
 		$this->assign('intro',$intro);
@@ -170,7 +170,7 @@ class ProductAction extends BaseAction{
 			$where['id']=$id;
 		}
 		$product=$this->product_model->where($where)->find();
-		$product['intro']=str_replace(array('&lt;','&gt;'),array('<','>'),$product['intro']);
+		$product['intro']=str_replace(array('&lt;','&gt;','&quot;','&amp;nbsp;'),array('<','>','"',' '),$product['intro']);
 		$this->assign('product',$product);
 		$this->assign('metaTitle',$product['name']);
 		
@@ -178,12 +178,11 @@ class ProductAction extends BaseAction{
 	}
 	public function company($display=1){
 		//店铺信息
-		$company_model=M('Company');
+		$company_model=M('company');
 		$where=array('token'=>$this->token);
-		if (isset($_GET['companyid'])){
-			$where['id']=intval($_GET['companyid']);
+		if (isset($_GET['id'])){
+			$where['id']=intval($_GET['id']);
 		}
-		
 		$thisCompany=$company_model->where($where)->find();
 		$this->assign('thisCompany',$thisCompany);
 		//分店信息
@@ -324,9 +323,18 @@ class ProductAction extends BaseAction{
 		$userinfo_model=M('Userinfo');
 		$thisUser=$userinfo_model->where(array('token'=>$this->token,'wecha_id'=>$this->wecha_id))->find();
 		$this->assign('thisUser',$thisUser);
+		//是否要支付
+		$alipay_config_db=M('Alipay_config');
+		$alipayConfig=$alipay_config_db->where(array('token'=>$this->token))->find();
+		$this->assign('alipayConfig',$alipayConfig);
+		//
 		if (IS_POST){
 			$row=array();
 			$carts=$this->_getCart();
+			//
+			$allCartInfo=$this->calCartInfo($carts);
+			$totalFee=$allCartInfo[1];
+			//
 			$cartsCount=0;
 			//
 			$isGroupon=0;
@@ -339,11 +347,18 @@ class ProductAction extends BaseAction{
 			$grouponCart=array();
 			$diningCart=array();
 			$productsByKey=array();
+			//
+			$orderName='';
 			if (count($productids)){
 				$products=$this->product_model->where(array('id'=>array('in',$productids)))->select();
 				if ($products){
+					$t=0;
 					foreach ($products as $p){
 						$productsByKey[$p['id']]=$p;
+						if ($t==0){
+							$orderName=$p['name'];
+						}
+						$t++;
 					}
 				}
 				foreach ($carts as $k=>$c){
@@ -363,6 +378,9 @@ class ProductAction extends BaseAction{
 					$cartsCount++;
 				}
 			}
+			$orderid=$this->wecha_id.time();
+			$row['orderid']=$orderid;
+			$orderid=$row['orderid'];
 			//
 			$row['truename']=$this->_post('truename');
 			$row['tel']=$this->_post('tel');
@@ -493,7 +511,11 @@ class ProductAction extends BaseAction{
 				}
 				
 			}
-			$this->redirect(U('Product/my',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'success'=>1)));
+			if ($alipayConfig['open']){
+				$this->redirect(U('Alipay/pay',array('token'=>$this->token,'wecha_id'=>$this->wecha_id,'success'=>1,'price'=>$totalFee,'orderName'=>$orderName,'orderid'=>$orderid)));
+			}else {
+				$this->redirect(U('Product/my',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'success'=>1)));
+			}
 		}else {
 			//如果是订餐
 			if ($cartIsDining){
@@ -501,7 +523,12 @@ class ProductAction extends BaseAction{
 				$diningConfig =M('Reply_info')->where(array('infotype'=>'Dining','token'=>$this->token))->find();
 				$this->assign('diningConfig',$diningConfig);
 				//可以预定多少天内的
-				$days=7;
+				$diningConfigDetail=unserialize($diningConfig['config']);
+				if (!$diningConfigDetail||!$diningConfigDetail['yudingdays']){
+					$days=7;
+				}else {
+					$days=$diningConfigDetail['yudingdays'];
+				}
 				$time=time();
 				$secondsOfDay=24*60*60;
 				$dateTimes=array();
@@ -540,6 +567,12 @@ class ProductAction extends BaseAction{
 		$this->assign('orders',$orders);
 		$this->assign('ordersCount',count($orders));
 		$this->assign('metaTitle','我的订单');
+		//
+		//是否要支付
+		$alipay_config_db=M('Alipay_config');
+		$alipayConfig=$alipay_config_db->where(array('token'=>$this->token))->find();
+		$this->assign('alipayConfig',$alipayConfig);
+		//
 		$this->display();
 	}
 	public function updateOrder(){
@@ -585,6 +618,12 @@ class ProductAction extends BaseAction{
 		$this->assign('totalFee',$totalFee);
 		
 		$this->assign('metaTitle','修改订单');
+		//
+		//是否要支付
+		$alipay_config_db=M('Alipay_config');
+		$alipayConfig=$alipay_config_db->where(array('token'=>$this->token))->find();
+		$this->assign('alipayConfig',$alipayConfig);
+		//
 		$this->display();
 	}
 	public function deleteOrder(){
@@ -638,7 +677,7 @@ class ProductAction extends BaseAction{
 		$this->display();
 	}
 	public function a(){
-		//$where['token']=$this->token;
+		$where['token']=$this->token;
 		$where['diningtype']=array('gt',0);
 		
 
@@ -753,5 +792,5 @@ class ProductAction extends BaseAction{
 		echo $str;
 	}
 }
-	
+
 ?>

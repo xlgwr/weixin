@@ -12,7 +12,6 @@ class LotteryAction extends UserAction{
 		//echo M('Lottery')->getLastSql();
 		$this->assign('count',M('Lottery')->where(array('token'=>session('token'),'type'=>1))->count());
 		$this->assign('list',$list);
-		
 		$this->display();
 	
 	}
@@ -58,11 +57,18 @@ class LotteryAction extends UserAction{
 		if($user['activitynum']>=$group['activitynum']){
 			$this->error('您的免费活动创建数已经全部使用完,请充值后再使用',U('Home/Index/price'));
 		}
-		$data=M('Lottery')->where($where)->save(array('status'=>1));
+		if ($check['status']==0){
+			$data=M('Lottery')->where($where)->save(array('status'=>1));
+			$tip='恭喜你,活动已经开始';
+		}else {
+			$data=M('Lottery')->where($where)->save(array('status'=>0));
+			$tip='设置成功,活动已经结束';
+		}
+		
 		if($data!=false){
-			$this->success('恭喜你,活动已经开始');
+			$this->success($tip);
 		}else{
-			$this->error('服务器繁忙,请稍候再试');
+			$this->error('设置失败');
 		}
 
 	}
@@ -128,7 +134,7 @@ class LotteryAction extends UserAction{
 		if($check==false)$this->error('非法操作');
 		$back=$data->where($wehre)->delete();
 		if($back==true){
-			M('Keyword')->where(array('pid'=>$id,'token'=>session('token'),'module'=>'lottery'))->delete();
+			M('Keyword')->where(array('pid'=>$id,'token'=>session('token'),'module'=>'Lottery'))->delete();
 			$this->success('删除成功');
 		}else{
 			$this->error('操作失败');

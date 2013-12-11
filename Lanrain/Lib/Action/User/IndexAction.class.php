@@ -122,6 +122,24 @@ class IndexAction extends UserAction{
 			$this->error('密码不能为空!',U('Index/useredit'));
 		}
 	}
-	
+	//处理关键词
+	public function handleKeywords(){
+		$Model = new Model();
+		//检查system表是否存在
+		$keyword_db=M('Keyword');
+		$count = $keyword_db->where('pid>0')->count();
+		//
+		$i=intval($_GET['i']);
+		//
+		if ($i<$count){
+			$img_db=M($data['module']);
+			$back=$img_db->field('id,text,pic,url,title')->limit(9)->order('id desc')->where($like)->select();
+			//
+			$rt=$Model->query("CREATE TABLE IF NOT EXISTS `tp_system_info` (`lastsqlupdate` INT( 10 ) NOT NULL ,`version` VARCHAR( 10 ) NOT NULL) ENGINE = MYISAM CHARACTER SET utf8");
+			$this->success('关键词处理中:'.$row['des'],'?g=User&m=Create&a=index');
+		}else {
+			exit('更新完成，请测试关键词回复');
+		}
+	}
 }
 ?>

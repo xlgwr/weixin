@@ -45,7 +45,6 @@ class AlipayAction extends UserAction{
 		$data=M('Indent')->data(			
 		array('uid'=>session('uid'),'title'=>$subject,'uname'=>$this->_post('uname'),'gid'=>$this->_post('gid'),'create_time'=>time(),'indent_id'=>$out_trade_no,'price'=>$total_fee))->add();
 		$show_url = rtrim(C('site_url'),'/');
-
 		//构造要请求的参数数组，无需改动
 		$parameter = array(
 			"service" => "create_partner_trade_by_buyer",
@@ -65,8 +64,6 @@ class AlipayAction extends UserAction{
 			"show_url"	=> $show_url,	
 			"_input_charset"	=> trim(strtolower(strtolower('utf-8')))
 		);
-		
-		
 		//建立请求
 		$alipaySubmit = new AlipaySubmit($this->setconfig());
 		$html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
@@ -164,19 +161,7 @@ class AlipayAction extends UserAction{
 		$alipay = $doc->getElementsByTagName( "alipay" )->item(0)->nodeValue;
 		echo $alipay;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	}
 	
 }
