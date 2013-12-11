@@ -194,7 +194,7 @@ textarea {
     margin: 0;
 }
 .innerPanel .content {
-   padding:10px 20px 20px;
+    padding:10px 20px 20px;
 }
 .innerPanel .operator {
     background: none repeat scroll 0 0 #F0F1F2;
@@ -532,7 +532,7 @@ textarea {
 	color:#fff
 }
 .tableContent .content {
-     border-left: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
     float: right;
     margin-left: -2px;
     padding: 20px;
@@ -899,8 +899,7 @@ TABLE.ListProduct .time{
 
 
 TABLE.ListProduct .edit{
-	padding:0px 5px;
-	width:12%;
+	width: 120px;
 }
 
 .bgfc{ background-color:#fcfcfc; padding:20px; border:1px solid #EEEEEE; border-top:0; margin-bottom:20px;}

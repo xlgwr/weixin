@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 class LotteryAction extends BaseAction{
 	public function index(){
 		$agent = $_SERVER['HTTP_USER_AGENT']; 
-		if(!strpos($agent,"icroMessenger")) {
+		if(!strpos($agent,"MicroMessenger")) {
 			echo '此功能只能在微信浏览器中使用';exit;
 		}
 		$token		= $this->_get('token');
@@ -11,7 +11,8 @@ class LotteryAction extends BaseAction{
 		
 		$redata		= M('Lottery_record');
 		$where 		= array('token'=>$token,'wecha_id'=>$wecha_id,'lid'=>$id);
-		$record 	= $redata->where($where)->find();		
+		$record 	= $redata->where($where)->find();	
+		
 		if($record == Null){
 			$redata->add($where);
 			$record = $redata->where($where)->find();
@@ -60,10 +61,11 @@ class LotteryAction extends BaseAction{
 		$data['txt']		= $Lottery['txt'];
 		$data['sttxt']		= $Lottery['sttxt'];		
 		$data['title']		= $Lottery['title'];
+		$data['displayjpnums']		= $Lottery['displayjpnums'];
 		$data['statdate']	= $Lottery['statdate'];
 		$data['enddate']	= $Lottery['enddate'];		
 		$this->assign('Dazpan',$data);
-		//var_dump($data);exit();
+		//var_dump($data['displayjpnums']);exit();
 		$this->display();
 	}
 	
@@ -92,12 +94,12 @@ class LotteryAction extends BaseAction{
 	protected function get_prize($id){
 		$Lottery 	= M('Lottery')->where(array('id'=>$id))->find();
 		//
-		$firstNum=intval($Lottery['fistnums'])-intval($Lottery['fistlucknums']);
-		$secondNum=intval($Lottery['secondnums'])-intval($Lottery['secondlucknums']);
-		$thirdNum=intval($Lottery['thirdnums'])-intval($Lottery['thirdlucknums']);
-		$fourthNum=intval($Lottery['fournums'])-intval($Lottery['fourlucknums']);
-		$fifthNum=intval($Lottery['fivenums'])-intval($Lottery['fivelucknums']);
-		$sixthNum=intval($Lottery['sixnums'])-intval($Lottery['sixlucknums']);
+		$firstNum=intval($Lottery['fistnums']);
+		$secondNum=intval($Lottery['secondnums']);
+		$thirdNum=intval($Lottery['thirdnums']);
+		$fourthNum=intval($Lottery['fournums']);
+		$fifthNum=intval($Lottery['fivenums']);
+		$sixthNum=intval($Lottery['sixnums']);
 		$multi=intval($Lottery['canrqnums']);//最多抽奖次数
 		$prize_arr = array(
 			'0' => array('id'=>1,'prize'=>'一等奖','v'=>$firstNum,'start'=>0,'end'=>$firstNum), 
@@ -227,7 +229,7 @@ class LotteryAction extends BaseAction{
 					
 					break;
 		}
-		
+		M('Lottery')->where(array('id'=>$lid))->setInc('click');
 		return $prizetype;
 	}
 	
@@ -297,8 +299,25 @@ class LotteryAction extends BaseAction{
 
 			$rollback = M('Lottery_record')->where(array('lid'=> $lid,
 				'wecha_id'=>$wechaid))->save($data);
+				
+			/*$base_call = M('Call');
+			$data_call['token'] = $list['token'];
+			$call = $base_call->where($data_call)->find();
+			
+			if($call['status'] == 1){
+				$sms = new Sms("http://www.189lt.com:9000/servlet/UserServiceAPI",$call['phone_account'],$call['phone_password'],1);
+				$txt = $sms->sendsms($data['phone'],"恭喜！尊敬的 ".$data['wecha_name'].",请您保持手机通畅！请您牢记的领奖号:".$data['sn']);
+				
+				echo $txt;
+				echo '<br/>';
+			}else{
+				echo '请先开启短信发送设置';
+				echo '<br/>';
+			}*/
 			
 			echo'{"success":1,"msg":"恭喜！尊敬的 '.$data['wecha_name'].',请您保持手机通畅！你的领奖序号:'.$data['sn'].'"}';
+			M('Lottery')->where(array('id'=>$lid))->setInc('joinnum');
+            M('Lottery')->where(array('id'=>$lid))->setInc('click');
 			exit;
 		}
 	}

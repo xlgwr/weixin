@@ -18,6 +18,7 @@ class PhotoAction extends UserAction{
 	public function edit(){
 		if($this->_get('token')!=session('token')){$this->error('非法操作');}
 		$data=D('Photo');
+		
 		if(IS_POST){
 			$this->all_save('Photo');
 		}else{

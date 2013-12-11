@@ -66,7 +66,7 @@ KindEditor.plugin('filemanager', function(K) {
 		bodyDiv = K('.ke-plugin-filemanager-body', div),
 		moveupImg = K('[name="moveupImg"]', div),
 		moveupLink = K('[name="moveupLink"]', div),
-		/*viewServerBtn = K('[name="viewServer"]', div),*/
+		viewServerBtn = K('[name="viewServer"]', div),
 		viewTypeBox = K('[name="viewType"]', div),
 		orderTypeBox = K('[name="orderType"]', div);
 		function reloadPage(path, order, func) {

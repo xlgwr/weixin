@@ -4,113 +4,20 @@
 <script src="{lanrain::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
 <script src="{lanrain::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
 <script src="{lanrain::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
-<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
-<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
-<style type="text/css">
-	.pic_img{width:145px;height:145px;}
-	.px{width:135px;}
-</style>
 <script>
 	KindEditor.ready(function(K){
 		var editor = K.editor({
 			allowFileManager:true
 		});
-		K('#upload_small_pic').click(function() {
+		K('#upload').click(function() {
 			editor.loadPlugin('image', function() {
 				editor.plugin.imageDialog({
-					fileUrl : K('#small_pic').val(),
+					fileUrl : K('#pic').val(),
 					clickFn : function(url, title) {
 						if(url.indexOf("http") > -1){
-							K('#small_pic').val(url);
-							$("#frontpic_src").attr('src',url);
+							K('#pic').val(url);
 						}else{
-							K('#small_pic').val("{lanrain::C('site_url')}"+url);
-							$("#frontpic_src").attr('src',"{lanrain::C('site_url')}"+url);
-						}
-						editor.hideDialog();
-					}
-				});
-			});
-		});
-		K('#upload_site_map_1').click(function() {
-			editor.loadPlugin('image', function() {
-				editor.plugin.imageDialog({
-					fileUrl : K('#site_map_1').val(),
-					clickFn : function(url, title) {
-						if(url.indexOf("http") > -1){
-							K('#site_map_1').val(url);
-              $("#rightpic_src").attr('src',url);
-						}else{
-							K('#site_map_1').val("{lanrain::C('site_url')}"+url);
-							$("#rightpic_src").attr('src',"{lanrain::C('site_url')}"+url);
-						}
-						editor.hideDialog();
-					}
-				});
-			});
-		});
-		K('#upload_site_map_2').click(function() {
-			editor.loadPlugin('image', function() {
-				editor.plugin.imageDialog({
-					fileUrl : K('#site_map_2').val(),
-					clickFn : function(url, title) {
-						if(url.indexOf("http") > -1){
-							K('#site_map_2').val(url);
-              $("#backpic_src").attr('src',url);
-						}else{
-							K('#site_map_2').val("{lanrain::C('site_url')}"+url);
-							$("#backpic_src").attr('src',"{lanrain::C('site_url')}"+url);
-						}  
-						editor.hideDialog();
-					}
-				});
-			});
-		});
-		K('#upload_site_map_3').click(function() {
-			editor.loadPlugin('image', function() {
-				editor.plugin.imageDialog({
-					fileUrl : K('#site_map_3').val(),
-					clickFn : function(url, title) {
-						if(url.indexOf("http") > -1){
-							K('#site_map_3').val(url);
-              $("#leftpic_src").attr('src',url);
-						}else{
-							K('#site_map_3').val("{lanrain::C('site_url')}"+url);
-							$("#leftpic_src").attr('src',"{lanrain::C('site_url')}"+url);
-						}  
-						editor.hideDialog();
-					}
-				});
-			});
-		});
-		K('#upload_site_map_4').click(function() {
-			editor.loadPlugin('image', function() {
-				editor.plugin.imageDialog({
-					fileUrl : K('#site_map_4').val(),
-					clickFn : function(url, title) {
-						if(url.indexOf("http") > -1){
-							K('#site_map_4').val(url);
-              $("#toppic_src").attr('src',url);
-						}else{
-							K('#site_map_4').val("{lanrain::C('site_url')}"+url);
-							$("#toppic_src").attr('src',"{lanrain::C('site_url')}"+url);
-						}  
-						editor.hideDialog();
-					}
-				});
-			});
-		});
-		K('#upload_site_map_5').click(function() {
-			editor.loadPlugin('image', function() {
-				editor.plugin.imageDialog({
-					fileUrl : K('#site_map_5').val(),
-					clickFn : function(url, title) {
-						if(url.indexOf("http") > -1){
-							K('#site_map_5').val(url);
-              $("#bottompic_src").attr('src',url);
-						}else{
-							K('#site_map_5').val("{lanrain::C('site_url')}"+url);
-							$("#bottompic_src").attr('src',"{lanrain::C('site_url')}"+url);
+							K('#pic').val("{lanrain::C('site_url')}"+url);
 						}
 						editor.hideDialog();
 					}
@@ -118,54 +25,29 @@
 			});
 		});
 	});
-	
-</script>
-
-<script>
-
-var editor;
-KindEditor.ready(function(K) {
-editor = K.create('#intro', {
-resizeType : 1,
-allowPreviewEmoticons : false,
-allowImageUpload : true,
-uploadJson : '/index.php?g=User&m=Upyun&a=kindedtiropic',
-items : [
-'source','undo','clearhtml','hr',
-'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut']
-});
-
-});
-</script>
-<script>
-function selectall(name) {
-	var checkItems=$('.cbitem');
-	if ($("#check_box").attr('checked')==false) {
-		$.each(checkItems, function(i,val){
-			val.checked=false;
-		});
-		
-	} else {
-		$.each(checkItems, function(i,val){
-			val.checked=true;
-		});
-	}
-}
-function setlatlng(longitude,latitude){
-	art.dialog.data('longitude', longitude);
-	art.dialog.data('latitude', latitude);
-	// 此时 iframeA.html 页面可以使用 art.dialog.data('test') 获取到数据，如：
-	// document.getElementById('aInput').value = art.dialog.data('test');
-	art.dialog.open('{lanrain::U('Map/setLatLng',array('token'=>$token,'id'=>$id))}',{lock:false,title:'设置经纬度',width:600,height:400,yesText:'关闭',background: '#000',opacity: 0.87});
-}
 </script>
 <link rel="stylesheet" type="text/css" href="{lanrain::RES}/css/cymain.css" />
-<div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
+<div class="content">
+
 <div class="cLineB">
   <h4>{lanrain:$infoType.name}回复配置 </h4><a href="javascript:history.go(-1);" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
  </div>
-      
+ <!--tab start-->
+<div class="tab">
+<ul>
+<if condition="$infoType.type eq 'Groupon'">
+<li class="tabli" id="tab0"><a href="{lanrain::U('Groupon/index',array('token'=>$token))}">团购订单管理</a></li>
+<li class="tabli" id="tab2"><a href="{lanrain::U('Groupon/products',array('token'=>$token))}">团购管理</a></li>
+<else/>
+<li class="tabli" id="tab0"><a href="{lanrain::U('Product/index',array('token'=>$token,'dining'=>$isDining))}"><if condition="$isDining neq 1">商品<else/>菜品</if>管理</a></li>
+<li class="tabli" id="tab2"><a href="{lanrain::U('Product/cats',array('token'=>$token,'dining'=>$isDining))}"><if condition="$isDining neq 1">商品分类<else/>菜品分类</if>管理</a></li>
+<li class="tabli" id="tab3"><a href="{lanrain::U('Product/orders',array('token'=>$token,'dining'=>$isDining))}">订单管理</a></li>
+<if condition="$isDining eq 1"><li class="tabli" id="tab2"><a href="{lanrain::U('Product/tables',array('token'=>$token,'dining'=>1))}">桌台管理</a></li></if>
+</if>
+<li class="current tabli" id="tab20"><a href="{lanrain::U('Reply_info/set',array('token'=>$token,'infotype'=>$infoType['type']))}">{lanrain:$infoType.name}回复配置</a></li>
+</ul>
+</div>
+<!--tab end-->        
     <div class="msgWrap bgfc" style="margin-top:10px;">
 	  <form class="form" method="post" action="" target="_top" enctype="multipart/form-data">	 
 		<table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -185,9 +67,7 @@ function setlatlng(longitude,latitude){
 				</tr>
 				<tr>
 					<th>回复图片：</th>
-					<td><input type="text" readonly="readonly" class="px"  value="{lanrain:$set.picurl}" name="picurl" id="site_map_5" style="width:550px;" />
-                    	<a href="###" id="upload_site_map_5" >上传</a>
-                   <!-- <input type="text" name="picurl" value="{lanrain:$set.picurl}" id="pic" class="px" style="width:550px;"> <script src="/tpl/static/upyun.js"></script><a href="###" onclick="upyunPicUpload('pic',700,420,'{lanrain:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('pic')">预览</a>   &nbsp; 大小为720x400--></td>
+					<td><input type="text" name="picurl" id="pic" value="{lanrain:$set.picurl}" class="px" style="width:550px;"readonly="readonly"/><span class="ke-button-common" id="upload" style="margin-top: 3px;margin-left: 5px;"><input type="button" class="ke-button-common ke-button" value="Upload"></span><br/> 填写图片外链地址，大小为720x400</td>
 				</tr>
 				<tr>
 					<th>第三方接口：</th>
@@ -198,10 +78,6 @@ function setlatlng(longitude,latitude){
 					<th>订购方式开关：</th>
 					<td><label><input type="checkbox" name="diningyuding" value="1" <if condition="$set.diningyuding eq 1">checked</if> /> 开启预定</label> <label><input type="checkbox" name="diningwaimai" value="1" <if condition="$set.diningwaimai eq 1">checked</if> /> 开启外卖</label></td>
 				</tr>
-				<tr>
-        <th>订购时限：</th>
-        <td><input type="text" id="yudingdays" name="yudingdays" value="{lanrain:$config.yudingdays}" class="px" style="width:100px;" /> 天（可以订购多少天）</td> 
-       </tr>
 				</if>
 				<th>&nbsp;</th>
 					<td>

@@ -192,9 +192,6 @@ class WeixinAction extends Action
                 case '相册':
                     return $this->xiangce();
                     break;
-				// case '留言':
-					// return $this->liuyan();
-					// break;
                 case '商城':
                     /*$pro = M('product')->where(array(
                         'groupon' => '0',
@@ -223,57 +220,6 @@ class WeixinAction extends Action
                                 strip_tags(htmlspecialchars_decode($pro['info'])),
                                 $pro['picurl'],
                                 C('site_url') . '/index.php?g=Wap&m=Product&a=index&token=' . $this->token . '&wecha_id=' . $this->data['FromUserName']
-                            )
-                        ),
-                        'news'
-                    );
-                    break;
-				case '全景':
-					$pro = M('reply_info')->where(array(
-                        'infotype' => 'Panorama',
-                        'token' => $this->token
-                    ))->find();
-                    return array(
-                        array(
-                            array(
-                                $pro['title'],
-                                strip_tags(htmlspecialchars_decode($pro['info'])),
-                                $pro['picurl'],
-                                C('site_url') . '/index.php?g=Wap&m=Panorama&a=index&token=' . $this->token . '&wecha_id=' . $this->data['FromUserName']
-                            )
-                        ),
-                        'news'
-                    );
-                    break;
-				case '留言':
-					$pro = M('reply_info')->where(array(
-                        'infotype' => 'Liuyan',
-                        'token' => $this->token
-                    ))->find();
-                    return array(
-                        array(
-                            array(
-                                $pro['title'],
-                                strip_tags(htmlspecialchars_decode($pro['info'])),
-                                $pro['picurl'],
-                                C('site_url') . '/index.php?g=Wap&m=Liuyan&a=index&token=' . $this->token . '&wecha_id=' . $this->data['FromUserName']
-                            )
-                        ),
-                        'news'
-                    );
-                    break;
-				case '预约':
-					$pro = M('reply_info')->where(array(
-                        'infotype' => 'Yuyue',
-                        'token' => $this->token
-                    ))->find();
-                    return array(
-                        array(
-                            array(
-                                $pro['title'],
-                                strip_tags(htmlspecialchars_decode($pro['info'])),
-                                $pro['picurl'],
-                                C('site_url') . '/index.php?g=Wap&m=Yuyue&a=index&token=' . $this->token . '&wecha_id=' . $this->data['FromUserName']
                             )
                         ),
                         'news'
@@ -380,30 +326,6 @@ class WeixinAction extends Action
             'news'
         );
     }
-	// function liuyan(){
-		// $liuyan = M('liuyan')->where(array(
-            // 'token' => $this->token,
-            // 'status' => 1
-        // ))->find();
-		// $data['title']   = $liuyan['title'];
-        // $data['keyword'] = $liuyan['keyword'];
-        // $data['url']     = rtrim(C('site_url'), '/') . U('Wap/Liuyan/index', array(
-            // 'token' => $this->token,
-            // 'wecha_id' => $this->data['FromUserName']
-        // ));
-        // $data['pic']  = $liuyan['pic'] ? $liuyan['pic'] : rtrim(C('site_url'), '/') . '/tpl/static/images/02.jpg';
-        // return array(
-            // array(
-                // array(
-                    // $data['title'],
-                    // $data['keyword'],
-                    // $data['pic'],
-                    // $data['url']
-                // )
-            // ),
-            // 'news'
-        // );
-	// }
     function companyMap()
     {
         import("Home.Action.MapAction");
@@ -570,14 +492,6 @@ class WeixinAction extends Action
                                         ));
 										
                                         break;
-									case '砸金蛋':
-                                        $url = C('site_url') . U('Wap/Zadan/index', array(
-                                            'token' => $this->token,
-                                            'wecha_id' => $this->data['FromUserName'],
-                                            'id' => $urlInfos[1]
-                                        ));
-										
-                                        break;
                                     case '大转盘':
                                         $url = C('site_url') . U('Wap/Lottery/index', array(
                                             'token' => $this->token,
@@ -663,40 +577,6 @@ class WeixinAction extends Action
                         'news'
                     );
                     break;
-				case 'Xitie':
-                    $this->requestdata('other');
-                    $pro = M('Xitie')->where(array(
-                        'id' => $data['pid']
-                    ))->find();
-                    return array(
-                        array(
-                            array(
-                                $pro['title'],
-                                strip_tags(htmlspecialchars_decode($pro['message'])),
-                                $pro['pic'],
-                                C('site_url') . '/index.php?g=Wap&m=Xitie&a=index&token=' . $this->token . '&wecha_id=' . $this->data['FromUserName'] . '&id=' . $data['pid']
-                            )
-                        ),
-                        'news'
-                    );
-                    break;
-				case 'liuyan':
-                    $this->requestdata('other');
-                    $pro = M('liuyan')->where(array(
-                        'id' => $data['pid']
-                    ))->find();
-                    return array(
-                        array(
-                            array(
-                                $pro['title'],
-                                strip_tags(htmlspecialchars_decode($pro['message'])),
-                                $pro['pic'],
-                                C('site_url') . '/index.php?g=Wap&m=Liuyan&a=index&token=' . $this->token . '&wecha_id=' . $this->data['FromUserName'] . '&id=' . $data['pid']
-                            )
-                        ),
-                        'news'
-                    );
-                    break;
                 case 'Selfform':
                     $this->requestdata('other');
                     $pro = M('Selfform')->where(array(
@@ -732,8 +612,6 @@ class WeixinAction extends Action
                             break;
                         case 3:
                             $model = 'Coupon';
-						case 4:
-                            $model = 'Zadan';
                     }
                     $id   = $info['id'];
                     $type = $info['type'];

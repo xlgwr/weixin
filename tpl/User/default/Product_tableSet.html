@@ -1,9 +1,7 @@
  <include file="Public:head" /> 
-<style type="text/css">
-.userinfoArea td{width:auto;}
-</style>
+
 <input type="hidden" id="catUrl" value="{lanrain::U('Product/ajaxCatOptions',array('token'=>$token))}" />
-  <div class="content" style="width:900px; background:none; margin-left:275px; border:none; margin-bottom:30px;" > 
+  <div class="content"> 
    <div class="cLineB"> 
     <h4>桌台设置</h4> 
     <a href="{lanrain::U('Product/tables',array('token'=>$token,'dining'=>$isDining))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
@@ -13,7 +11,7 @@
 <input type="hidden" name="id" value="{lanrain:$set.id}" />
 </if>
 <input type="hidden" name="discount" id="discount" value="{lanrain:$set.id}" />
-    <div class="msgWrap bgfc" style="width:920p"> 
+    <div class="msgWrap bgfc"> 
      <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
       <tbody> 
        <tr> 

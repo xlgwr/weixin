@@ -11,7 +11,7 @@ class Member_cardAction extends UserAction{
 		$this->wxuser_db=M("Wxuser");
 		//获取所在组的开卡数量
 		$thisWxUser=$this->wxuser_db->where(array('token'=>$this->token))->find();
-		$thisUser=M("Users")->where(array('id'=>$thisWxUser['uid']))->find();
+		$thisUser=M("Users")->where(array('uid'=>$thisWxUser['uid']))->find();
 		$thisGroup=M("User_group")->where(array('id'=>$thisUser['gid']))->find();
 		$this->wxuser_db->where(array('token'=>$this->token))->save(array('allcardnum'=>$thisGroup['create_card_num']));
 		$can_cr_num = $thisWxUser['allcardnum'] - $thisWxUser['yetcardnum'];
@@ -28,7 +28,8 @@ class Member_cardAction extends UserAction{
 		}
 		$data=M('Member_card_set')->where(array('token'=>$_SESSION['token']))->find();
 		if(IS_POST){
-			$_POST['token']=$_SESSION['token'];			
+			$_POST['token']=$_SESSION['token'];
+					
 			if($data==false){				
 				$this->all_insert('Member_card_set');
 			}else{
@@ -37,25 +38,10 @@ class Member_cardAction extends UserAction{
 			}
 		}else{
 			if($data==false){
-				$data=array (
-  'id' => '2',
-  'token' => 'PigCms',
-  'cardname' => C('site_name').'会员卡',
-  'logo' => '/tpl/User/default/common/images/cart_info/logo-card.png',
-  'bg' => './tpl/User/default/common/images/card/card_bg15.png',
-  'diybg' => '/tpl/User/default/common/images/card/card_bg17.png',
-  'msg' => '微时代会员卡，方便携带收藏，永不挂失',
-  'numbercolor' => '#000000',
-  'vipnamecolor' => '#121212',
-  'Lastmsg' => '/tpl/User/default/common/images/cart_info/news.jpg',
-  'vip' => '/tpl/User/default/common/images/cart_info/vippower.jpg',
-  'qiandao' => '/tpl/User/default/common/images/cart_info/qiandao.jpg',
-  'shopping' => '/tpl/User/default/common/images/cart_info/shopping.jpg',
-  'memberinfo' => '/tpl/User/default/common/images/cart_info/user.jpg',
-  'membermsg' => '/tpl/User/default/common/images/cart_info/vippower.jpg',
-  'contact' => '/tpl/User/default/common/images/cart_info/addr.jpg',
-  'create_time' => '0',
-);
+				$data=M('Member_card_set')->where(array('token'=>'LanRain'))->find();
+			}
+			if(empty($data['diybg'])){
+				$data['diybg'] = $data['bg'];
 			}
 			$this->assign('card',$data);
 			$this->display();
@@ -105,7 +91,6 @@ class Member_cardAction extends UserAction{
 		if (IS_POST){//删除操作
 			for ($i=0;$i<50;$i++){
 				$data->where(array('id'=>$_POST['id_'.$i]))->delete();
-				//删除的时候得删除userinfo里的信息
 			}
 			$this->success('删除成功',U('Member_card/create',array('token'=>session('token'))));
 		}else {
@@ -129,7 +114,7 @@ class Member_cardAction extends UserAction{
 	public function getuserinfo(){
 		$wecha_id = $this->_get("id");
 
-		$uinfo = M('Userinfo')->where(array('wecha_id'=>$wecha_id ,'token'=>$_SESSION['token']))->order('id DESC')->find();
+		$uinfo = M('Userinfo')->where(array('wecha_id'=>$wecha_id ,'token'=>$_SESSION['token']))->find();
 		$this->assign('list',$uinfo);
 	
 		$this->display();	
@@ -152,7 +137,7 @@ class Member_cardAction extends UserAction{
 			if($end==false||$stat==false){$this->error('卡号起始值或结束值都不能为空');}
 
 			if($end > 65535 || $stat <= 0){
-				$this->error('卡号起始值不能为0或结束值不能超过65535');
+				$this->error('卡号起始值部能为0或结束值不能超过65535');
 				return;
 			}
 			

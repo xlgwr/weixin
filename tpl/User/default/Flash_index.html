@@ -1,5 +1,5 @@
 <include file="Public:head"/>
-<div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
+<div class="content">
 
 <div class="cLineB">
   <h4>幻灯片管理 <span class="FAQ">3G网站头部幻灯片。</span></h4>
@@ -42,7 +42,7 @@
 <td class="norightborder">
 	<a target="ddd" href="{lanrain::U('Wap/Index/flash',array('token'=>$_SESSION['token']))}">查看</a>
 	<a target="ddd" href="{lanrain::U('Flash/edit',array('id'=>$vo['id']))}">编辑</a>
-	<a href="{lanrain::U('Flash/del',array('id'=>$vo['id']))}">删除</a>
+	<a href="javascript:drop_confirm('您确定要删除吗?', \'{lanrain::U('Flash/del',array('id'=>$vo['id']))}\');">删除</a>
 </td>
 </tr>
 </volist>

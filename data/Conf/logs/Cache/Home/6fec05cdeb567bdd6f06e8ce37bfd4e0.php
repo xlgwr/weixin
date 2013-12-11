@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <title>创想-微信营销专家</title>
-<meta name="keywords" content="LANRAIN 微信帮手 微信公众账号 微信公众平台 微信公众账号开发 微信二次开发 微信接口开发 微信托管服务 微信营销 微信公众平台接口开发"/>
-<meta name="description" content="微信公众平台接口开发、托管、营销活动、二次开发"/>
+<meta name="keywords" content="LANRAIN 创想微信营销平台 微信创业  海宁创业  海宁微信营销  嘉兴创业  嘉兴微信营销  桐乡创业  桐乡微信营销  湖州创业  湖州微信营销  杭州微信营销  杭州创业微信帮手 微信公众账号 微信公众平台 微信公众账号开发 微信二次开发 微信接口开发 微信托管服务 微信营销 微信公众平台接口开发"/>
+<meta name="description" content="创想微信营销平台 微信创业  海宁创业  海宁微信营销  嘉兴创业  嘉兴微信营销  桐乡创业  桐乡微信营销  湖州创业  湖州微信营销  杭州微信营销  杭州创业 微信公众平台接口开发、托管、营销活动、二次开发"/>
 <link rel="stylesheet" type="text/css" href="<?php echo RES;?>/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo RES;?>/css/index.css"/>
 <!-- add new html css -->
@@ -61,7 +61,7 @@ var searchid = 5;
 	 <!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
 <div class="nav clearfix">
 	<div class="nav-content">
-		<h1 class="left" onclick="location.herf='#'">创想·微信营销，如此简单！</h1>
+		<h1 class="left" onClick="location.herf='#'">创想·微信营销，如此简单！</h1>
 		<div class="left city">
 			<h2>微信营销，如此简单！</h2>
 				
@@ -72,7 +72,7 @@ var searchid = 5;
 					<a href="/" class="hover">首页</a>
 				</li>
 				<li>
-					<a href="<?php echo U('Home/Index/fc');?>" >功能介绍</a>
+					<a href="<?php echo U('Home/Index/fc');?>" >案例展示</a>
 				</li>
 				
 				<li>
@@ -166,6 +166,16 @@ $('#loginBox').keydown(function(e){
 	color: #0066FF;
 	font-weight: bold;
 }
+.STYLE5 {color: #666666}
+.STYLE6 {
+	color: #999999;
+	font-size: smaller;
+}
+.STYLE9 {color: #333333}
+.STYLE10 {
+	font-size: x-large;
+	color: #0033FF;
+}
 -->
    </style>
 <div class="header clearfix">
@@ -177,14 +187,14 @@ $('#loginBox').keydown(function(e){
 							<h4>已有<font>嘉善-德清-海宁-嘉兴-平湖-湖州-德清-余杭-绍兴等30多个地区3000多个人及企业</font>入驻创想，微信营销 如此简单</h4>
 							<a id="start_btn" class="start" href="<?php echo U('Index/reg');?>" title="入驻创想"></a>
 						</div>
-						<div class="pic">
+						<div class="regin pic">
 							<img src="<?php echo RES;?>/images/banner-a.png?v=2013-12-06-5" class="png-24" alt="banner" />
 						</div>
 					</li>
 									<li class="pic-intro" style="display: none;">
 						<div class="text">
 							<h4>
-								已有<font>嘉善-德清-海宁-嘉兴-平湖-湖州-德清-余杭-绍兴等30多个地区3000多个人及企业</font>入驻创想，微信营销 如此简单
+								已有<font>3000多个人及企业</font>入驻创想，微信营销 如此简单
 							</h4>
 							<a id="start_btn" class="start" href="<?php echo U('Index/reg');?>" title="入驻创想"></a>
 						</div>
@@ -316,7 +326,7 @@ $('#loginBox').keydown(function(e){
 					<h3>便民微服务</h3>
 				</a>
 				<p>提供生活服务，快递，天气，公交，翻译<br>
-				  增加用户粘性，增强微信功能，方便与众</p>
+				  增加用户粘性，方便与众</p>
 			</dd>
 		</dl>
 		<div class="line"></div>
@@ -326,8 +336,8 @@ $('#loginBox').keydown(function(e){
 					<div class="fimg icon message"></div>
 					<h3>微留言，招聘，二手</h3>
 				</a>
-				<p>留言，互动，招聘，二手，交友，私信<br>
-			  一键留言&nbsp;&nbsp;一键回复，一见私信</p>
+			  <p>留言，互动，招聘，二手，交友，私信<br>
+			  一键留言&nbsp;&nbsp;，一见私信</p>
 			</dd>
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#photo">
@@ -363,9 +373,9 @@ $('#loginBox').keydown(function(e){
 			<dd class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#estate">
 					<div class="fimg icon mstate"></div>
-					<h3>微房产</h3>
+					<h3>360全景看房看车</h3>
 				</a>
-				<p>即将开放</p>
+				<p>全方位360度展示产品，把宝贝让你尽收眼底</p>
 			</dd>
 			<dd  class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#car">
@@ -424,11 +434,11 @@ $('#loginBox').keydown(function(e){
 				</p>
 			</dd>
 			<dd class="vborder">
-				<a>
+				<a href="<?php echo U('Home/Index/fc');?>#life">
 					<div class="fimg icon life"></div>
-					<h3>微生活</h3>
+					<h3>微信支付</h3>
 				</a>
-				<p>微信公众号建立商圈<br>吃喝玩乐应有尽有</p>
+				<p>微商城，团购，订单<br>一键支付，快捷安全</p>
 			</dd>
 			<dd  class="vborder">
 				<a href="<?php echo U('Home/Index/fc');?>#buy">
@@ -550,9 +560,9 @@ $('#loginBox').keydown(function(e){
 	  </ul>
 		<div class="clearfix"> 
 		  <div align="center" class="STYLE1">
-		    <p class="STYLE5 STYLE1 STYLE4">创你所想 想你所创</p>
-		    <p class="STYLE3">&nbsp; </p>
-		    <p class="STYLE6">创想微信不断推出新功能，降低您的运营成本，提高微信营销效果。 </p>
+		    <p class="STYLE5 STYLE4 STYLE10">创你所想 想你所创</p>
+		    <p class="STYLE5 STYLE1 STYLE4">&nbsp;</p>
+		    <p class="STYLE5 STYLE1 STYLE4"><span class="STYLE6 STYLE5"><span class="STYLE9">创想微信不断推出新功能，降低您的运营成本，提高微信营销效果。 </span></span></p>
 		  </div>
 		</div>
 		<a id="prev2" class="prev" href="#"></a>

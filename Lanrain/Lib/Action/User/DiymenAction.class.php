@@ -71,15 +71,14 @@ class DiymenAction extends UserAction{
 	public function  class_send(){
 		if(IS_GET){
 			$api=M('Diymen_set')->where(array('token'=>session('token')))->find();
-			// dump($api);die;
+			//dump($api);
 			$url_get='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$api['appid'].'&secret='.$api['appsecret'];
 			$json=json_decode($this->curlGet($url_get));
 
 			if($api['appid']==false||$api['appsecret']==false){$this->error('必须先填写【AppId】【 AppSecret】');exit;}
 			$data = '{"button":[';
 
-			$class=M('Diymen_class')->where(array('token'=>session('token'),'pid'=>0))->limit(3)->order('sort desc')->select();
-			//dump($class);
+			$class=M('Diymen_class')->where(array('token'=>session('token'),'pid'=>0))->limit(3)->order('sort desc')->select();//dump($class);
 			$kcount=M('Diymen_class')->where(array('token'=>session('token'),'pid'=>0))->limit(3)->order('sort desc')->count();
 			$k=1;
 			foreach($class as $key=>$vo){
@@ -127,11 +126,10 @@ class DiymenAction extends UserAction{
 			file_get_contents('https://api.weixin.qq.com/cgi-bin/menu/delete?access_token='.$json->access_token);
 
 			$url='https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.$json->access_token;
-
 			if($this->api_notice_increment($url,$data)==false){
 				$this->error('操作失败');
 			}else{
-				$this->success('操作成功',U('Diymen/index'));
+				$this->success('操作成功');
 			}
 			exit;
 		}else{

@@ -180,13 +180,20 @@ $('#loginBox').keydown(function(e){
     </div>
     
     </div>
-<div class="footer">
+<style type="text/css">
+<!--
+.STYLE1 {color: #484848}
+.STYLE2 {font-size: larger}
+-->
+</style>
+<div class="footer STYLE1">
 	<div class="footer-content clearfix">
 		
 		<div class="copyright">
-			<p>地址：海宁市西山路62号龙翔商务楼1506 </p>
-			<p>联系方式：0573-87231707 13586378851 QQ：1771472817 </p>
-			<p> Copyright © 2011-2013 www.weilgo.com. All Rights Reserved   海宁创想科技有限公司——海宁极限贸易有限公司 版权所有    ——浙ICP备12038865号-1</p>
+			<p align="center" class="STYLE2">地址：海宁市西山路612号龙翔商务楼1506 </p>
+			<p align="center" class="STYLE2">联系方式：0573-87231707 13586378851 18868718085 QQ：1771472817 </p>
+			<p align="center" class="STYLE2"> Copyright © 2011-2013 www.weilgo.com. All Rights Reserved   海宁创想科技有限公司——海宁极限贸易有限公司 版权所有    —</p>
+			<p align="center" class="STYLE2">——浙ICP备12038865号-1——</p>
 		</div>
 	</div>
 </div>
@@ -217,7 +224,7 @@ $('#loginBox').keydown(function(e){
 	<span class="hudongzhushou">官方微信</span>
   <div class="erwei_big" style="display:none;">
 	  <p>扫一扫，关注创想官方微信，体验创想智能</p>
-	</div>
+  </div>
 [海宁微生活]</div>
 </body>
 </html>

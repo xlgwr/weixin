@@ -9,7 +9,7 @@ class ProductAction extends UserAction{
 		//
 		$token_open=M('token_open')->field('queryname')->where(array('token'=>session('token')))->find();
 		if((!isset($_GET['dining'])&&!strpos($token_open['queryname'],'shop'))||(isset($_GET['dining'])&&!strpos($token_open['queryname'],'dx'))){
-           // $this->error('您还未开启该模块的使用权,请到功能模块中添加',U('Function/index',array('token'=>session('token'),'id'=>session('wxid'))));
+            $this->error('您还未开启该模块的使用权,请到功能模块中添加',U('Function/index',array('token'=>session('token'),'id'=>session('wxid'))));
 		}
 		//是否是餐饮
 		if (isset($_GET['dining'])&&intval($_GET['dining'])){
@@ -221,8 +221,6 @@ class ProductAction extends UserAction{
 			if($product_model->create()){
 				if($product_model->where($where)->save($_POST)){
 					$this->success('修改成功',U('Product/index',array('token'=>session('token'),'dining'=>$this->isDining)));
-					$keyword_model=M('Keyword');
-					$keyword_model->where(array('token'=>session('token'),'pid'=>$this->_post('id'),'module'=>'Product'))->save(array('keyword'=>$this->_post('keyword')));
 				}else{
 					$this->error('操作失败');
 				}
@@ -281,7 +279,7 @@ class ProductAction extends UserAction{
             $back=$product_model->where($wehre)->delete();
             if($back==true){
             	$keyword_model=M('Keyword');
-            	$keyword_model->where(array('token'=>session('token'),'pid'=>$id,'module'=>'Product'))->delete();
+            	$keyword_model->where(array('token'=>session('token'),'pid'=>$id,'module'=>'Product'));
                 $this->success('操作成功',U('Product/index',array('token'=>session('token'),'dining'=>$this->isDining)));
             }else{
                  $this->error('服务器繁忙,请稍后再试',U('Product/index',array('token'=>session('token'))));
@@ -353,60 +351,51 @@ class ProductAction extends UserAction{
 		$product_cart_model=M('product_cart');
 		$thisOrder=$product_cart_model->where(array('id'=>intval($_GET['id'])))->find();
 		//检查权限
-		if (strtolower($thisOrder['token'])!=strtolower($this->_session('token'))){
+		if ($thisOrder['token']!=$this->_session('token')){
 			exit();
 		}
-		if (IS_POST){
-			if (intval($_POST['sent'])){
-				$_POST['handled']=1;
-			}
-			$product_cart_model->where(array('id'=>$thisOrder['id']))->save(array('sent'=>intval($_POST['sent']),'logistics'=>$_POST['logistics'],'logisticsid'=>$_POST['logisticsid'],'handled'=>1));
-			
-			$this->success('修改成功',U('Product/orderInfo',array('token'=>session('token'),'id'=>$thisOrder['id'])));
-		}else {
-			//订餐信息
-			$product_diningtable_model=M('product_diningtable');
-			if ($thisOrder['tableid']) {
-				$thisTable=$product_diningtable_model->where(array('id'=>$thisOrder['tableid']))->find();
-				$thisOrder['tableName']=$thisTable['name'];
-			}
-			//
-			$this->assign('thisOrder',$thisOrder);
-			$carts=unserialize($thisOrder['info']);
-
-			//
-			$totalFee=0;
-			$totalCount=0;
-			$products=array();
-			$ids=array();
-			foreach ($carts as $k=>$c){
-				if (is_array($c)){
-					$productid=$k;
-					$price=$c['price'];
-					$count=$c['count'];
-					//
-					if (!in_array($productid,$ids)){
-						array_push($ids,$productid);
-					}
-					$totalFee+=$price*$count;
-					$totalCount+=$count;
-				}
-			}
-			if (count($ids)){
-				$list=$this->product_model->where(array('id'=>array('in',$ids)))->select();
-			}
-			if ($list){
-				$i=0;
-				foreach ($list as $p){
-					$list[$i]['count']=$carts[$p['id']]['count'];
-					$i++;
-				}
-			}
-			$this->assign('products',$list);
-			//
-			$this->assign('totalFee',$totalFee);
-			$this->display();
+		//订餐信息
+		$product_diningtable_model=M('product_diningtable');
+		if ($thisOrder['tableid']) {
+			$thisTable=$product_diningtable_model->where(array('id'=>$thisOrder['tableid']))->find();
+			$thisOrder['tableName']=$thisTable['name'];
 		}
+		//
+		$this->assign('thisOrder',$thisOrder);
+		$carts=unserialize($thisOrder['info']);
+		
+		//
+		$totalFee=0;
+		$totalCount=0;
+		$products=array();
+		$ids=array();
+		foreach ($carts as $k=>$c){
+			if (is_array($c)){
+				$productid=$k;
+				$price=$c['price'];
+				$count=$c['count'];
+				//
+				if (!in_array($productid,$ids)){
+					array_push($ids,$productid);
+				}
+				$totalFee+=$price*$count;
+				$totalCount+=$count;
+			}
+		}
+		if (count($ids)){
+			$list=$this->product_model->where(array('id'=>array('in',$ids)))->select();
+		}
+		if ($list){
+			$i=0;
+			foreach ($list as $p){
+				$list[$i]['count']=$carts[$p['id']]['count'];
+				$i++;
+			}
+		}
+		$this->assign('products',$list);
+		//
+		$this->assign('totalFee',$totalFee);
+		$this->display();
 	}
 	public function deleteOrder(){
 		$product_model=M('product');

@@ -3,11 +3,15 @@ class CardAction extends BaseAction{
 	public function index(){
 		$agent = $_SERVER['HTTP_USER_AGENT']; 
 		if(!strpos($agent,"MicroMessenger")) {
-			//echo '此功能只能在微信浏览器中使用';exit;
+			echo '此功能只能在微信浏览器中使用';exit;
 		}
 		$token=$this->_get('token');
 		if($token!=false){
 			$data=M('member_card_set')->where(array('token'=>$token))->find();
+			if(empty($data['diybg'])){
+				$data['diybg'] = $data['bg'];
+			}
+			
 			$this->assign('card',$data);
 		}else{
 			$this->error('无此信息');
@@ -24,6 +28,11 @@ class CardAction extends BaseAction{
 		if($token!=false){
 			//会员卡信息
 			$data=M('member_card_set')->where(array('token'=>$token))->find();
+			
+			if(empty($data['diybg'])){
+				$data['diybg'] = $data['bg'];
+			}
+			
 			//商家信息
 			$info=M('member_card_info')->where(array('token'=>$token))->find();
 			//卡号
@@ -33,7 +42,8 @@ class CardAction extends BaseAction{
 			$this->assign('card',$data);
 			$this->assign('card_info',$card);
 			$this->assign('contact',$contact);
-			$this->assign('info',$info);			
+			$this->assign('info',$info);		
+			
 		}else{
 			$this->error('无此信息');
 		}
@@ -41,20 +51,12 @@ class CardAction extends BaseAction{
     }
 
 	public function get_card(){
-		$token=$this->_get('token');
-		$wecha_id=$this->_get('wecha_id');
-		$card=M('member_card_create')->where(array('token'=>$token,'wecha_id'=>$wecha_id))->find();
-		if($card){
-			header('Location:'.rtrim(C('site_url'),'/').U('Wap/Card/vip',array('token'=>$token,'wecha_id'=>$wecha_id)));
-		}
-		
-		
-		
 		$agent = $_SERVER['HTTP_USER_AGENT']; 
 		if(!strpos($agent,"MicroMessenger")) {
 			echo '此功能只能在微信浏览器中使用';exit;
 		}
-		
+		$token=$this->_get('token');
+		$wecha_id=$this->_get('wecha_id');
 		$get_card=M('member_card_create')->where(array('wecha_id'=>$wecha_id))->find();
 
 		if($get_card!=false){
@@ -63,30 +65,36 @@ class CardAction extends BaseAction{
 		if($token!=false){
 			//会员卡信息
 			$data=M('member_card_set')->where(array('token'=>$token))->find();
+			if(empty($data['diybg'])){
+				$data['diybg'] = $data['bg'];
+			}
 			//商家信息
 			$info=M('member_card_info')->where(array('token'=>$token))->find();
 			//联系方式
-		
+			$contact=M('member_card_contact')->where(array('token'=>$token))->order('sort desc')->find();
 			$this->assign('card',$data);
 			$this->assign('card_info',$card);
-			$contact=M('company')->where(array('token'=>$token,'branch'=>0))->find();
 			$this->assign('contact',$contact);
 			$this->assign('info',$info);
 		}else{
 			$this->error('无此信息');
 		}
+		
 		$this->display();	
     }
 
 	public function info(){
 		$agent = $_SERVER['HTTP_USER_AGENT']; 
 		if(!strpos($agent,"MicroMessenger")) {
-			//echo '此功能只能在微信浏览器中使用';exit;
+			echo '此功能只能在微信浏览器中使用';exit;
 		}
 		$token=$this->_get('token');
 		if($token!=false){
 			//会员卡信息
 			$data=M('member_card_set')->where(array('token'=>$token))->find();
+			if(empty($data['diybg'])){
+				$data['diybg'] = $data['bg'];
+			}
 			//商家信息
 			$info=M('member_card_info')->where(array('token'=>$token))->find();
 			//联系方式
@@ -101,26 +109,24 @@ class CardAction extends BaseAction{
 		}else{
 			$this->error('无此信息');
 		}
+		
 		$this->display();	
     }
 
 	public function vip(){
-		$token=$this->_get('token');
-		$wecha_id=$this->_get('wecha_id');
-		$card=M('member_card_create')->where(array('token'=>$token,'wecha_id'=>$wecha_id))->find();
-		if($card==false){
-			header('Location:'.rtrim(C('site_url'),'/').U('Wap/Card/get_card',array('token'=>$token,'wecha_id'=>$wecha_id)));
-		}
-		//
 	   $agent = $_SERVER['HTTP_USER_AGENT']; 
 		if(!strpos($agent,"MicroMessenger")) {
-			//echo '此功能只能在微信浏览器中使用';exit;
+			echo '此功能只能在微信浏览器中使用';exit;
 		}
-
+		$token=$this->_get('token');
+		$wecha_id=$this->_get('wecha_id');
 		 
 		if($token!=false){
 			//会员卡信息
 			$data=M('member_card_set')->where(array('token'=>$token))->find();
+			if(empty($data['diybg'])){
+				$data['diybg'] = $data['bg'];
+			}
 			//商家信息
 			$info=M('member_card_info')->where(array('token'=>$token))->find();
 			//卡号
@@ -128,13 +134,16 @@ class CardAction extends BaseAction{
 			//var_dump($card);exit;
 			//dump(array('token'=>$token,'wecha_id'=>$this->get('wecha_id')));
 			//联系方式
-			$contact=M('company')->where(array('token'=>$token,'branch'=>0))->find();
+			$contact=M('member_card_contact')->where(array('token'=>$token))->order('sort desc')->find();
 			$this->assign('card',$data);
 			$this->assign('card_info',$card);
 			$this->assign('contact',$contact);
 			$this->assign('info',$info);			
 			$data=M('member_card_set')->where(array('token'=>$token))->find();
 			//dump($data);
+			if(empty($data['diybg'])){
+				$data['diybg'] = $data['bg'];
+			}
 			$this->assign('card',$data);
 			//特权服务
 			$vip=M('member_card_vip')->where(array('token'=>$token))->order('id desc')->find();
@@ -149,20 +158,22 @@ class CardAction extends BaseAction{
 		}else{
 			$this->error('无此信息');
 		}
-	
 		$this->display();
 	
 	}
 	public function addr(){
 	$agent = $_SERVER['HTTP_USER_AGENT']; 
 		if(!strpos($agent,"MicroMessenger")) {
-			//echo '此功能只能在微信浏览器中使用';exit;
+			echo '此功能只能在微信浏览器中使用';exit;
 		}
 	
 		$token=$this->_get('token');
 		if($token!=false){
 			//会员卡信息
 			$data=M('member_card_set')->where(array('token'=>$token))->find();
+			if(empty($data['diybg'])){
+				$data['diybg'] = $data['bg'];
+			}
 			//商家信息
 			//$addr=M('member_card_contact')->where(array('token'=>$token))->select();
 			//if (!$addr){

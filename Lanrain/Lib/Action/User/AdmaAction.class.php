@@ -33,12 +33,7 @@ class AdmaAction extends UserAction{
 		
 		}else{
 			if($adma==false){
-				//$adma=M('Adma')->where(array('token'=>'pigcms','uid'=>1))->find();
-				$adma=array();
-				$adma['url']='/tpl/Home/new/common/images/ewm2.jpg';
-				$adma['copyright']='© 2001-2013 某某微信版权所有';
-				$adma['info']='微信营销管理平台为个人和企业提供基于微信公众平台的一系列功能，包括智能回复、微信3G网站、互动营销活动，会员管理，在线订单，数据统计等系统功能,带给你全新的微信互动营销体验。';
-				$adma['title']=C('site_name');
+				$adma=M('Adma')->where(array('token'=>'lanrain','uid'=>1))->find();
 				$this->assign('adma',$adma);
 			}
 			$this->display();

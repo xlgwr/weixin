@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<title>关于我们－微信通 微信营销专家</title>
-<meta name="keywords" content="LANRAIN 微信帮手 微信公众账号 微信公众平台 微信公众账号开发 微信二次开发 微信接口开发 微信托管服务 微信营销 微信公众平台接口开发"/>
-<meta name="description" content="微信公众平台接口开发、托管、营销活动、二次开发"/>
+<title>关于我们－创想微信 微信营销专家</title>
+<meta name="keywords" content="LANRAIN 创想微信营销平台 微信创业  海宁创业  海宁微信营销  嘉兴创业  嘉兴微信营销  桐乡创业  桐乡微信营销  湖州创业  湖州微信营销  杭州微信营销  杭州创业微信帮手 微信公众账号 微信公众平台 微信公众账号开发 微信二次开发 微信接口开发 微信托管服务 微信营销 微信公众平台接口开发"/>
+<meta name="description" content="创想微信营销平台 微信创业  海宁创业  海宁微信营销  嘉兴创业  嘉兴微信营销  桐乡创业  桐乡微信营销  湖州创业  湖州微信营销  杭州微信营销  杭州创业微信公众平台接口开发、托管、营销活动、二次开发"/>
 <link rel="stylesheet" type="text/css" href="<?php echo RES;?>/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo RES;?>/css/index.css"/>
 <!-- add new html css -->
@@ -61,7 +61,7 @@ var searchid = 5;
 	 <!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
 <div class="nav clearfix">
 	<div class="nav-content">
-		<h1 class="left" onclick="location.herf='#'">创想·微信营销，如此简单！</h1>
+		<h1 class="left" onClick="location.herf='#'">创想·微信营销，如此简单！</h1>
 		<div class="left city">
 			<h2>微信营销，如此简单！</h2>
 				
@@ -72,7 +72,7 @@ var searchid = 5;
 					<a href="/" class="hover">首页</a>
 				</li>
 				<li>
-					<a href="<?php echo U('Home/Index/fc');?>" >功能介绍</a>
+					<a href="<?php echo U('Home/Index/fc');?>" >案例展示</a>
 				</li>
 				
 				<li>

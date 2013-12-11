@@ -61,7 +61,7 @@ var searchid = 5;
 	 <!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
 <div class="nav clearfix">
 	<div class="nav-content">
-		<h1 class="left" onclick="location.herf='#'">创想·微信营销，如此简单！</h1>
+		<h1 class="left" onClick="location.herf='#'">创想·微信营销，如此简单！</h1>
 		<div class="left city">
 			<h2>微信营销，如此简单！</h2>
 				
@@ -72,7 +72,7 @@ var searchid = 5;
 					<a href="/" class="hover">首页</a>
 				</li>
 				<li>
-					<a href="<?php echo U('Home/Index/fc');?>" >功能介绍</a>
+					<a href="<?php echo U('Home/Index/fc');?>" >案例展示</a>
 				</li>
 				
 				<li>
@@ -159,6 +159,19 @@ $('#loginBox').keydown(function(e){
 	}
 </script><!-- banner -->
 
+<style type="text/css">
+<!--
+.STYLE1 {
+	font-size: x-large;
+	color: #00FF00;
+	font-weight: bold;
+}
+.STYLE2 {
+	font-size: xx-large;
+	font-weight: bold;
+}
+-->
+</style>
 <div class="main">
    <div class="pos"> 当前位置&raquo;<a href="<?php echo C('site_url');?> "><?php echo C('site_name');?></a> &raquo; <a href="">帮助中心</a></div>
 <style type="text/css">
@@ -268,7 +281,7 @@ border: 1px solid #C1C9D4;
                         <div style="" class="">
                             <div class="articleContent catalogHome normalContent">
                                 <div class="section lastSection">
-                                   <div class="section lastSection">
+                                  <div class="section lastSection">
                                     <p>1、登录 <a href="http://mp.weixin.qq.com/">微信公众平台</a>（<a href="http://mp.weixin.qq.com/">http://mp.weixin.qq.com/</a>），进行身份认证，填写信息，提交身份证。</p>
                                     <p>认证后，点击高级功能 → 进入开发模式</p><br>
                                     <p><img src="<?php echo STATICS;?>/help/help002.jpg" width="790px"></p><br>
@@ -282,17 +295,18 @@ border: 1px solid #C1C9D4;
 									<p>Token填写 <font color="red"><?php echo $_GET['token']; ?></font></p>
 									<p><img src="<?php echo STATICS;?>/help/help004.jpg" width="790px"></p><br>
 									<p>4、确认开启</p>
-									<p>5、在手机上用微信给你的公众号输入"帮助"，测试你的接口是否配置正常！</p><br>									
-                                </div>
-                              
+									<p>5、在手机上用微信给你的公众号输入"帮助"，测试你的接口是否配置正常！</p>
+									<p>&nbsp;</p>
+									<p align="center" class="STYLE2"><a href="www.baidu.com">点击进入公众号配置教程</a></p>
+									<br>
+                                  </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
     </div>
-    </div>
+  </div>
 <!--结束-->
 </div>
 <script type="text/javascript">try{Dd('webpage_7').className='left_menu_on';}catch(e){}</script>
@@ -344,3 +358,5 @@ border: 1px solid #C1C9D4;
 [海宁微生活]</div>
 </body>
 </html>
+<div align="center" class="STYLE1"></div>
+<div align="center" class="STYLE1"></div>

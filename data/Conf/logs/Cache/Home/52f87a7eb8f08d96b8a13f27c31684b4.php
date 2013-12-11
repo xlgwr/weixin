@@ -61,7 +61,7 @@ var searchid = 5;
 	 <!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
 <div class="nav clearfix">
 	<div class="nav-content">
-		<h1 class="left" onclick="location.herf='#'">创想·微信营销，如此简单！</h1>
+		<h1 class="left" onClick="location.herf='#'">创想·微信营销，如此简单！</h1>
 		<div class="left city">
 			<h2>微信营销，如此简单！</h2>
 				
@@ -72,7 +72,7 @@ var searchid = 5;
 					<a href="/" class="hover">首页</a>
 				</li>
 				<li>
-					<a href="<?php echo U('Home/Index/fc');?>" >功能介绍</a>
+					<a href="<?php echo U('Home/Index/fc');?>" >案例展示</a>
 				</li>
 				
 				<li>
@@ -159,6 +159,12 @@ $('#loginBox').keydown(function(e){
 	}
 </script><!-- banner -->
 
+<style type="text/css">
+<!--
+.STYLE2 {font-size: xx-large}
+.STYLE3 {font-size: larger}
+-->
+</style>
 <div class="banner gbanner"></div>
 <div class="main">
 <style>
@@ -204,12 +210,11 @@ a:hover{ text-decoration: underline; }
         <div class="contaier wp cf">
 
     <div class="think-login">
-        <div class="head">
-            <strong>用户登录</strong>
-        </div>
+        <div class="head STYLE2">
+            用户登录        </div>
         <div class="body think-form ">
             <form action="<?php echo U('Users/checklogin');?>" method="post" class="login">
-                <table>
+                 <table>
                     <tbody><tr>
                         <th>用户名</th>
                         <td>
@@ -230,14 +235,14 @@ a:hover{ text-decoration: underline; }
                     </tr>
 					<tr>
                         <th>&nbsp;</th>
-                        <td>
-                            &nbsp;
-                        </td>
+                        <td>&nbsp;
+                            
+                      </td>
                     </tr><tr>
                         <th>&nbsp;</th>
-                        <td>
-                            &nbsp;
-                        </td>
+                        <td>&nbsp;
+                            
+                      </td>
                     </tr><!--
 					   <tr>
                         <th>帐号审核：</th>
@@ -246,12 +251,14 @@ a:hover{ text-decoration: underline; }
                         </td>
                     </tr>-->
                 </tbody></table>
+                <span class="STYLE3">入住创想微信请加创想QQ群： 179585317    
+            QQ：1771472817                </span>
             </form>
         </div>
     </div>
     <div class="login-other">
           <div class="head">
-            <strong style="font-weight: normal;font-size: 30px;vertical-align: bottom;color: #323232;">用户注册</strong>
+            <span style="font-size: 36px"><strong style="font-weight: normal;font-size: 30px;vertical-align: bottom;color: #323232;">用户注册</strong></span>
 		　</div>
         <div class="body think-form ">
             <form action="<?php echo U('Users/checkreg');?>" method="post" class="login">
@@ -288,9 +295,9 @@ a:hover{ text-decoration: underline; }
                     </tr>
 					<tr>
                         <th>&nbsp;</th>
-                        <td>
-                            &nbsp;
-                        </td>
+                        <td>&nbsp;
+                            
+                      </td>
                     </tr><!--
 					   <tr>
                         <th>帐号审核：</th>
@@ -299,6 +306,8 @@ a:hover{ text-decoration: underline; }
                         </td>
                     </tr>-->
                 </tbody></table>
+                <span class="STYLE3">入住创想微信请加创想QQ群： 179585317    
+            QQ：1771472817                </span>
             </form>
         </div>
     </div>
