@@ -106,59 +106,6 @@ var searchid = 5;
 	</div>
 </div>
 
-<script>
-var $do_submit = false;
-
-// 绑定回车键
-$('#loginBox').keydown(function(e){
-	if(13 == event.keyCode){
-		login();
-	}
-});
-
-	function login()
-	{
-		if (true == $do_submit)
-		{
-			return false;
-		}
-
-		var $pre_submit = '登录', $done_submit = '登录中...';
-		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
-		$('#login_button').text($done_submit);
-		$do_submit = true;
-
-		// check
-		if ('' == $username || '' == $password)
-		{
-			$('#err_tips').text('您输入的未来购号或密码错误，请重新输入！');
-			$('#err_area').show();
-			$('#login_button').text($pre_submit);
-			$do_submit = false;
-			return false;
-		}
-
-		var $login_data = {
-			username:$username,
-			password:$password,
-			keepalive:$keepalive
-		};
-		$.post('/login', $login_data, function(rs){
-			if(rs.errno == 200)
-			{
-				location.href = rs.url_route;
-			}
-			else
-			{
-				$('#err_tips').text(rs.error);
-				$('#err_area').show();
-				$('#login_button').text($pre_submit);
-			}
-			$do_submit = false;
-		}, 'json');
-	}
-</script><!-- banner -->
-
 <div class="Public-content clearfix">
 	<div class="Public">
 		<h1 class="Public-h1">案例展示</h1>
@@ -357,9 +304,8 @@ $('#loginBox').keydown(function(e){
 	$("#nav_lis a").click(function(e){
 		
 		var urlgo=$(this).attr("href");		
-		window.open(urlgo);
-	})
-	$("#nav_lis").on("mouseover", function(e){
+		window.open(urlgo,'_self');
+			$("#nav_lis").on("mouseover", function(e){
 			$(this).find("li").removeClass("hover");
 			e.target.className = "hover";
 			var index = e.target.getAttribute("data-index");
@@ -374,6 +320,8 @@ $('#loginBox').keydown(function(e){
 			}
 
 		});
+	})
+
 
 
 	});

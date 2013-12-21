@@ -5,13 +5,13 @@ return array(
 	
 'DB_HOST'=>'localhost',
 	
-'DB_PORT'=>'3306',
+'DB_PORT'=>'3307',
 	
-'DB_NAME'=>'cxweixin',
+'DB_NAME'=>'weilgo',
 	
-'DB_USER'=>'cxweixin',
+'DB_USER'=>'root',
 	
-'DB_PWD'=>'7125521cm',
+'DB_PWD'=>'xielin',
 	
 'DB_PREFIX'=>'tp_',
 
