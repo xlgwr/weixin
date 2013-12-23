@@ -68,7 +68,7 @@ textarea {
 	margin:0 auto;
 }
 
-/*Í·²¿*/
+/*Í·ï¿½ï¿½*/
 .header {
 	height:80px;
 }
@@ -104,7 +104,7 @@ textarea {
 	color:#fff;
 	font-size:18px;
 }
-/*ÖÐ¼äÄÚÈÝ*/
+/*ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .qtcontent {
 	 margin: 0 auto;
     text-align: left;
@@ -166,7 +166,7 @@ textarea {
 .red{ color: #F00;background-color: transparent; border:0;}
 .green{ color:#090;background-color: transparent; border:0;}
 
-/*µÇÂ¼*/
+/*ï¿½ï¿½Â¼*/
 
 .panelTitle {
     padding: 20px 40px;
@@ -306,7 +306,7 @@ textarea {
     margin-left: 20px;
 }
 
-/*µ×²¿*/
+/*ï¿½×²ï¿½*/
 .footer {
 	text-align:center;
 	padding:20px 50px;
@@ -328,7 +328,6 @@ textarea {
 }
 .footer .copyright {
 	font-size:12px;
-	text-shadow:0px 1px 1px #fff;
 }
 .textGray {
 	color: #999999;
@@ -395,9 +394,9 @@ textarea {
     font-size: 14px;
     line-height: 1.6em;
 }
-/*×¢²á*/
+/*×¢ï¿½ï¿½*/
 
-/*ÓÃ»§¹ÜÀí*/
+/*ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .px, .pt {
     padding: 4px;
 }
@@ -454,7 +453,7 @@ textarea {
 }
 
 
-/*¹ÜÀíÆ½Ì¨²Ëµ¥*/
+/*ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½Ëµï¿½*/
 .tableContent{background: none repeat scroll 0 0 #ffffff;
     padding: 0;}
 .accountInfo .avatar {
@@ -1001,7 +1000,7 @@ TABLE.ListProduct .edit{
 .bigbtn img{ margin-right:5px}
 
 
-/*Ê×Ò³*/
+/*ï¿½ï¿½Ò³*/
 #nv_member { background:#ebedf0 url(../images/bg_home.png) repeat; }
 .homebg { background: url(../images/bg_home1.png) repeat-x scroll 0 0 transparent; }
 .homebg2 { background: url(../images/bg_home2.jpg) no-repeat scroll center 0 transparent; }
@@ -1064,7 +1063,7 @@ TABLE.ListProduct .edit{
 }
 
 
-/*Ìí¼Ó¶àÍ¼ÎÄ*/
+/*ï¿½ï¿½ï¿½Ó¶ï¿½Í¼ï¿½ï¿½*/
 .vote li{
 	border: 1px solid #cccccc; padding; width:580px; padding: 2px 0px 2px 10px; margin-bottom:3px;border-radius: 2px 2px 2px 2px;
 }
@@ -1087,7 +1086,7 @@ TABLE.ListProduct .edit{
 .deltw:hover {
 	background:url(../images/xx_hover.gif) no-repeat;
 }
-/* Í¼ÎÄ·ÖÀà */
+/* Í¼ï¿½Ä·ï¿½ï¿½ï¿½ */
 .board {
     background: url("../images/bg_repno.gif") no-repeat scroll 0 0 transparent;
     padding-left: 55px;
