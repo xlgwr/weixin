@@ -47,6 +47,12 @@ var searchid = 5;
 					$(".erwei_big").hide();
 				},1000);
 			});
+	$("#nav_ul a").on("click", function(e){
+			$("#nav_ul").find("a").removeClass("hover");
+			$(this).addClass("hover");
+
+		});
+
 	});
 </script>
 </head>
@@ -60,7 +66,7 @@ var searchid = 5;
 				
 		</div>
 		<div class="right line-li">
-			<ul>
+			<ul id='nav_ul'>
 				<li>
 					<a href="/" class="hover">首页</a>
 				</li>
